@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Authentication/sign_in.dart';
-import 'package:gym_rats/View/Intro/ExploreScreen.dart';
 import 'package:gym_rats/View/Intro/getstarted.dart';
 
 class SignUp extends StatelessWidget {
