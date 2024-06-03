@@ -1,14 +1,13 @@
-import 'package:flutter/cupertino.dart';
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
+import 'package:gym_rats/View/ExploreScreen.dart';
 import 'package:gym_rats/View/infopage1.dart';
 
-class Explore extends StatelessWidget {
-  const Explore({super.key});
+class getstarted extends StatelessWidget {
+  const getstarted({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +22,25 @@ class Explore extends StatelessWidget {
           image: DecorationImage(image: AssetImage('assets/images/explore.png'),fit: BoxFit.fill)
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 32,),
+              Padding(
+                padding: const EdgeInsets.only(left: 23),
+                child: InkWell(
+                  onTap: () {
+                    Get.to(infopage1());
+                  },
+                  child: SizedBox(
+                    height: 35,
+                    width: 35,
+                    child: Image.asset('assets/images/ep_back.png',fit: BoxFit.cover,),
+                  ),
+                ),
+              ),
             const SizedBox(
-              height: 370,
+              height: 299,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -96,30 +111,54 @@ class Explore extends StatelessWidget {
       
               ],
             ),
-            const SizedBox(height: 315,),
-            InkWell(
-              onTap: (){Get.to(infopage1());},
-              child: Container(
-                height: 56,
-                width: 336,
-                decoration: BoxDecoration(
-                  color: ColorsConfig.primaryColor,
-                  border: Border.all(width: 1,color: ColorsConfig.blackVariantColor),
-                  borderRadius: const BorderRadius.all(Radius.circular(20))
-                ),
-                child: const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Explore",style: TextStyle(fontWeight: FontWeight.w700,
-                    fontSize: 21,
-                    color: ColorsConfig.blackVariantColor,
+            const SizedBox(height: 290,),
+            Row(mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                      onTap: () {
+                        Get.to(getstarted());
+                                        },
+                      child: Container(
+                                height: 55.0,
+                                 width: 336.0,
+                                  decoration: BoxDecoration(
+                                   borderRadius: BorderRadius.circular(20),
+                                    color: const Color.fromRGBO(255, 0, 0, 0.7),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.red.withOpacity(0.1),
+                                        offset: const Offset(0, 4),
+                                        blurRadius: 4.0,
+                                        spreadRadius: 0.0,
+                                      )
+                                    ]
+                      
+                                ),
+                                child: const Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text("Sign up for free",style: TextStyle(
+                      fontSize: 21,
+                      fontWeight: FontWeight.w700,
+                      color: ColorsConfig.primaryColor
+                                    ),)
+                                  ],
+                                ),
+                              ),
+                    ),
+                    SizedBox(height: 5,),
                     
-                    ),),
-                  ],
-                ),
-              ),
+              ],
             ),
-            
+            SizedBox(height: 10,),
+            Row(mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Login",style: TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.w700,
+                        color: ColorsConfig.primaryColor
+                      ),)
+                    ],)
           ],
           
         ),
