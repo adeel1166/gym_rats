@@ -1,12 +1,10 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
-import 'package:gym_rats/View/ExploreScreen.dart';
-import 'package:gym_rats/View/getstarted.dart';
+import 'package:gym_rats/View/Intro/ExploreScreen.dart';
+import 'package:gym_rats/View/Intro/getstarted.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class infopage1 extends StatefulWidget {

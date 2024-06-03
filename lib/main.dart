@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gym_rats/View/ExploreScreen.dart';
-import 'package:gym_rats/View/infopage1.dart';
+import 'package:gym_rats/View/Intro/ExploreScreen.dart';
 
 void main(){
   runApp( const MyApp());
