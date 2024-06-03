@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
+import 'package:gym_rats/View/Authentication/sign_in.dart';
 import 'package:gym_rats/View/Authentication/signup.dart';
 import 'package:gym_rats/View/Intro/infopage1.dart';
 
@@ -153,11 +154,16 @@ class getstarted extends StatelessWidget {
             SizedBox(height: 10,),
             Row(mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Login",style: TextStyle(
-                        fontSize: 21,
-                        fontWeight: FontWeight.w700,
-                        color: ColorsConfig.primaryColor
-                      ),)
+                      InkWell(
+                        onTap: () {
+                          Get.to(SignIn());
+                        },
+                        child: Text("Login",style: TextStyle(
+                          fontSize: 21,
+                          fontWeight: FontWeight.w700,
+                          color: ColorsConfig.primaryColor
+                        ),),
+                      )
                     ],)
           ],
           

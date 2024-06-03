@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
+import 'package:gym_rats/View/Authentication/sign_in.dart';
+import 'package:gym_rats/View/Intro/ExploreScreen.dart';
+import 'package:gym_rats/View/Intro/getstarted.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -26,7 +31,7 @@ class SignUp extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 23),
                   child: InkWell(
                     onTap: () {
-                      // Get.to(Explore());
+                      Get.to(getstarted());
                     },
                     child: SizedBox(
                       height: 35,
@@ -167,7 +172,11 @@ class SignUp extends StatelessWidget {
                           decoration: const InputDecoration(
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.only(top: 30),
+                          suffixIcon: Icon(Icons.remove_red_eye_outlined,
+                          size: 22,opticalSize: 22,
                           
+                          color: Color.fromARGB(159, 143, 143, 138),
+                          ),
                           hintText: "Password",
                           hintStyle: TextStyle(
                             fontSize: 16,
@@ -213,7 +222,11 @@ class SignUp extends StatelessWidget {
                           decoration: const InputDecoration(
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.only(top: 30),
+                          suffixIcon: Icon(Icons.remove_red_eye_outlined,
+                          size: 22,opticalSize: 20,
                           
+                          color: Color.fromARGB(159, 143, 143, 138),
+                          ),
                           hintText: "Confirm password",
                           hintStyle: TextStyle(
                             fontSize: 16,
@@ -332,12 +345,17 @@ class SignUp extends StatelessWidget {
             SizedBox(height: 10,),
             Row(mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Already have an account! Login",
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: ColorsConfig.primaryColor,
-              ),)
+              InkWell(
+                onTap: () {
+                  Get.to(SignIn());
+                },
+                child: Text("Already have an account! Login",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: ColorsConfig.primaryColor,
+                ),),
+              )
             ],)
             ],
           ),
