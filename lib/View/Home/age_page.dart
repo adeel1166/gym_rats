@@ -6,6 +6,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/Model/NumberListWheel.dart';
 import 'package:gym_rats/View/Home/gender_page.dart';
+import 'package:gym_rats/View/Home/hieght_page.dart';
 
 class AgePage extends StatefulWidget {
   const AgePage({super.key});
@@ -78,7 +79,7 @@ class _AgePageState extends State<AgePage> {
               children: [
                 GestureDetector(
                       onTap: () {
-                        Get.to(AgePage());
+                        Get.to(HeightPage());
                                         },
                       child: Container(
                                 height: 55.0,

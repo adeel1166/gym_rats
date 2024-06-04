@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
-import 'package:gym_rats/Model/wieghtModel.dart';
-import 'package:gym_rats/View/Home/hieght_page.dart';
+import 'package:gym_rats/Model/HieghtModel.dart';
+import 'package:gym_rats/View/Home/age_page.dart';
+import 'package:gym_rats/View/Home/weight_page.dart';
 
-class WeightPage extends StatelessWidget {
-  const WeightPage({super.key});
+class HeightPage extends StatelessWidget {
+  const HeightPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class WeightPage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 23),
                 child: InkWell(
                   onTap: () {
-                    Get.to(HeightPage());
+                    Get.to(AgePage());
                   },
                   child: SizedBox(
                     height: 35,
@@ -63,7 +64,7 @@ class WeightPage extends StatelessWidget {
               Container(
                 height: 240,
                 child:  Expanded(
-            child: WeightModel(),  // Use the new widget
+            child: HeightModel(),  // Use the new widget
           ),
               ),
               SizedBox(height: 170,),
