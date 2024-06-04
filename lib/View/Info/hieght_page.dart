@@ -41,7 +41,7 @@ class HeightPage extends StatelessWidget {
               SizedBox(height: 85,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("How Old are you?",
+                Text("How tall are you?",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w700,

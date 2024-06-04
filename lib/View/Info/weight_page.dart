@@ -40,7 +40,7 @@ class WeightPage extends StatelessWidget {
               SizedBox(height: 85,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("How Old are you?",
+                Text("What is your Weight?",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w700,
@@ -50,7 +50,8 @@ class WeightPage extends StatelessWidget {
               SizedBox(height: 5,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("You can change it later",
+                Text("""This help us create your
+      personalized plan""",
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
