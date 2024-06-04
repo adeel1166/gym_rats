@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Authentication/sign_in.dart';
+import 'package:gym_rats/View/Home/age_page.dart';
 
 class GenderPage extends StatelessWidget {
   const GenderPage({super.key});
@@ -121,7 +122,7 @@ by knowing your gender""",
               children: [
                 GestureDetector(
                       onTap: () {
-                        // Get.to(GenderPage());
+                        Get.to(AgePage());
                                         },
                       child: Container(
                                 height: 55.0,
