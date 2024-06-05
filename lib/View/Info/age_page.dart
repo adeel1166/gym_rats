@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/Model/NumberListWheel.dart';
-import 'package:gym_rats/View/Home/gender_page.dart';
-import 'package:gym_rats/View/Home/hieght_page.dart';
+import 'package:gym_rats/View/Info/gender_page.dart';
+import 'package:gym_rats/View/Info/hieght_page.dart';
 
 class AgePage extends StatefulWidget {
   const AgePage({super.key});

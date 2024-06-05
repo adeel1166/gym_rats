@@ -1,0 +1,55 @@
+// common_container.dart
+import 'package:flutter/material.dart';
+import 'package:gym_rats/Common/colors.dart';
+
+
+class CommonContainer extends StatelessWidget {
+  final String text;
+
+  CommonContainer({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      width: 449,
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(40),
+          topLeft: Radius.circular(41),
+        ),
+        border: Border(
+          top: BorderSide(
+            color: ColorsConfig.redColor, 
+            width: 5,
+          ),
+        ),
+      ),
+      child: Center(
+        child: Container(
+          width: 370,
+          height: 49,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(60),
+              bottomRight: Radius.circular(60),
+              topLeft: Radius.circular(5),
+              topRight: Radius.circular(5),
+            ),
+            color: Color.fromRGBO(255, 0, 0, 0.56),
+          ),
+          child: Center(
+            child: Text(
+              text,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: ColorsConfig.primaryColor, 
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

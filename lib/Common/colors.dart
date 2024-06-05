@@ -6,4 +6,5 @@ class ColorsConfig {
   static const Color redColor = Color.fromRGBO(255, 0, 0, 1);
   static const Color secondaryVariantColor = Color.fromRGBO(216, 216, 221, 1);
   static const Color greyColor = Color.fromRGBO(72, 72, 72, 1);
+  static const Color transred = Color.fromRGBO(255, 0, 0, 0.56);
   }

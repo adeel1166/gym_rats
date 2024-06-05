@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/Model/HieghtModel.dart';
-import 'package:gym_rats/View/Home/age_page.dart';
-import 'package:gym_rats/View/Home/weight_page.dart';
+import 'package:gym_rats/View/Info/age_page.dart';
+import 'package:gym_rats/View/Info/weight_page.dart';
 
 class HeightPage extends StatelessWidget {
   const HeightPage({super.key});
