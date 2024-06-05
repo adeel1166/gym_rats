@@ -76,7 +76,7 @@ class AccountPage extends StatelessWidget {
                 ),
               )
           ,
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
@@ -90,56 +90,56 @@ class AccountPage extends StatelessWidget {
               fit: BoxFit.cover,),
             )
           ],),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Row(mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("26 yo",
+              const Text("26 yo",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w400,
                 color: ColorsConfig.primaryColor
               ),),
-              SizedBox(width: 5,),
+              const SizedBox(width: 5,),
               Container(
                height: 1.0,
                 width: 17.0,
                 color: const Color.fromARGB(255, 131, 129, 129),
                  ),
-                               SizedBox(width: 5,),
+                               const SizedBox(width: 5,),
 
-              Text("180 cm",
+              const Text("180 cm",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w400,
                 color: ColorsConfig.primaryColor
               ),),
-               SizedBox(width: 5,),
+               const SizedBox(width: 5,),
               Container(
                height: 1.0,
                 width: 17.0,
                 color: const Color.fromARGB(255, 131, 129, 129),
                  ),
-                               SizedBox(width: 5,),
-              Text("75 kg",
+                               const SizedBox(width: 5,),
+              const Text("75 kg",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w400,
                 color: ColorsConfig.primaryColor
               ),),
-              SizedBox(width: 5,),
+              const SizedBox(width: 5,),
               
               
             ],
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.all(13),
+                padding: const EdgeInsets.all(13),
                 width: 393.15,
                 height: 82.36,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30),
@@ -153,15 +153,15 @@ class AccountPage extends StatelessWidget {
                       height: 40,
                       width: 40,
                       clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset('assets/images/smile.png',
                       fit: BoxFit.fill,
                       ),
                     ),
-                    SizedBox(width: 16,),
-                    Column(
+                    const SizedBox(width: 16,),
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -185,15 +185,207 @@ class AccountPage extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 width: 375,
                 height: 446,
+                child: ListView(
+                  scrollDirection: Axis.vertical,
+                  children: [
+                    Column(
+                      children: [
+
+                  // First Row
+
+
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(height: 7,),
+                            Container(padding: EdgeInsets.all(20),
+                              height: 173,
+                              width: 173,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color.fromARGB(240, 72, 72, 72),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 15,),
+                                  Image.asset('assets/images/Crown.png'),
+                                  SizedBox(height: 50,),
+                                  Text("Membership              >",
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w700,
+                                    color: ColorsConfig.primaryColor
+                                  ),)
+                                ],
+                              ),
+                            ),
+                            Container(padding: EdgeInsets.all(20),
+                              height: 173,
+                              width: 173,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color.fromARGB(240, 72, 72, 72),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 15,),
+                                  Image.asset('assets/images/UserMale.png'),
+                                  SizedBox(height: 50,),
+                                  Text("Edit Profile                >",
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w700,
+                                    color: ColorsConfig.primaryColor
+                                  ),)
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(height: 20,),
+
+                  // Second Row
+
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(height: 7,),
+                            Container(padding: EdgeInsets.all(20),
+                              height: 173,
+                              width: 173,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color.fromARGB(240, 72, 72, 72),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 15,),
+                                  Image.asset('assets/images/CaloriesCalculator.png'),
+                                  SizedBox(height: 50,),
+                                  Text("Diet                             >",
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w700,
+                                    color: ColorsConfig.primaryColor
+                                  ),)
+                                ],
+                              ),
+                            ),
+                            Container(padding: EdgeInsets.all(20),
+                              height: 173,
+                              width: 173,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color.fromARGB(240, 72, 72, 72),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 15,),
+                                  Image.asset('assets/images/Settings.png'),
+                                  SizedBox(height: 50,),
+                                  Text("Setting                       >",
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w700,
+                                    color: ColorsConfig.primaryColor
+                                  ),)
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+
+                   // Third Row
+
+
+                        SizedBox(height: 20,),
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(height: 7,),
+                            Container(padding: EdgeInsets.all(20),
+                              height: 173,
+                              width: 173,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color.fromARGB(240, 72, 72, 72),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 15,),
+                                  SizedBox(
+                                    height: 50,
+                                    width: 50,
+                                    child: Image.asset('assets/images/helpdesk.png')),
+                                  SizedBox(height: 50,),
+                                  Text("Help                            >",
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w700,
+                                    color: ColorsConfig.primaryColor
+                                  ),)
+                                ],
+                              ),
+                            ),
+                            Container(padding: EdgeInsets.all(20),
+                              height: 173,
+                              width: 173,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color.fromARGB(240, 72, 72, 72),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 15,),
+                                  Container(
+                                    height: 50,
+                                    width: 50,
+                                    child: Image.asset('assets/images/exit.png')),
+                                  SizedBox(height: 50,),
+                                  Text("Log Out               >",
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w700,
+                                    color: ColorsConfig.primaryColor
+                                  ),)
+                                ],
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
               )
             ],
+          ),
+          SizedBox(
+            height: 10,
+            
+          ),
+          Container(
+            height: 47,
+            width: 430,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(240, 197, 197, 194),
+            ),
           )
           ],
         ),
