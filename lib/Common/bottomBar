@@ -9,7 +9,9 @@ Container(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 InkWell(
-                  onTap: () => HomePage(),
+                  onTap: () {
+                    Get.to(()=> HomePage());
+                  },
                   child: Container(
                     width: 45.87,
                     height: 35.66,
@@ -17,7 +19,9 @@ Container(
                   ),
                 ),
                 InkWell(
-                  // onTap: () =>HomePage(),
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
                   child: Container(
                     height: 40.89,
                     width: 40,
@@ -27,7 +31,9 @@ Container(
                  SizedBox(width: 5,),
 
                 InkWell(
-                  // onTap: () => HomePage(),
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
                   child: Container(
                     height: 35.66,
                     width: 80.27,
@@ -40,7 +46,9 @@ Container(
                 ),
                 SizedBox(width: 5,),
                 InkWell(
-                  // onTap: () => HomePage(),
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
                   child: Container(
                     width: 40,
                     height: 40.89,
@@ -48,7 +56,9 @@ Container(
                   ),
                 ),
                 InkWell(
-                  // onTap: () => HomePage(),
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
                   child: Container(
                     width: 40,
                     height: 40.89,

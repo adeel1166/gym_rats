@@ -402,7 +402,9 @@ class AccountPage extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  // onTap: () =>HomePage(),
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
                   child: Container(
                     height: 40.89,
                     width: 40,
@@ -412,7 +414,9 @@ class AccountPage extends StatelessWidget {
                  SizedBox(width: 5,),
 
                 InkWell(
-                  // onTap: () => HomePage(),
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
                   child: Container(
                     height: 35.66,
                     width: 80.27,
@@ -425,7 +429,9 @@ class AccountPage extends StatelessWidget {
                 ),
                 SizedBox(width: 5,),
                 InkWell(
-                  // onTap: () => HomePage(),
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
                   child: Container(
                     width: 40,
                     height: 40.89,
@@ -433,7 +439,9 @@ class AccountPage extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  // onTap: () => HomePage(),
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
                   child: Container(
                     width: 40,
                     height: 40.89,
