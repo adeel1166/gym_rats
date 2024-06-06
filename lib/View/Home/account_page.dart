@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Authentication/sign_in.dart';
+import 'package:gym_rats/View/Home/HomePage.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -385,6 +386,62 @@ class AccountPage extends StatelessWidget {
             width: 430,
             decoration: BoxDecoration(
               color: Color.fromARGB(240, 197, 197, 194),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                InkWell(
+                  onTap: () {
+                    Get.to(()=> HomePage());
+                  },
+                  child: Container(
+                    width: 45.87,
+                    height: 35.66,
+                    child: Image.asset('assets/images/home.png'),
+                  ),
+                ),
+                InkWell(
+                  // onTap: () =>HomePage(),
+                  child: Container(
+                    height: 40.89,
+                    width: 40,
+                    child: Image.asset('assets/images/search.png'),
+                  ),
+                ),
+                 SizedBox(width: 5,),
+
+                InkWell(
+                  // onTap: () => HomePage(),
+                  child: Container(
+                    height: 35.66,
+                    width: 80.27,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: ColorsConfig.redColor
+                    ),
+                    child: Center(child: Image.asset('assets/images/plus.png')),
+                  ),
+                ),
+                SizedBox(width: 5,),
+                InkWell(
+                  // onTap: () => HomePage(),
+                  child: Container(
+                    width: 40,
+                    height: 40.89,
+                    child: Image.asset('assets/images/comment.png'),
+                  ),
+                ),
+                InkWell(
+                  // onTap: () => HomePage(),
+                  child: Container(
+                    width: 40,
+                    height: 40.89,
+                    child: Image.asset('assets/images/person.png'),
+                  ),
+                )
+
+              ],
             ),
           )
           ],

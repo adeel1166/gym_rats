@@ -1,16 +1,4 @@
-// common_container.dart
-import 'package:flutter/material.dart';
-import 'package:gym_rats/Common/colors.dart';
-
-
-class CommonContainer extends StatelessWidget {
-  final String text;
-
-  CommonContainer({required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
+Container(
       height: 50,
       width: 449,
       decoration: const BoxDecoration(
@@ -50,6 +38,6 @@ class CommonContainer extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
+    ),
+  
+
