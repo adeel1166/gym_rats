@@ -2,10 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+    late final PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -26,7 +45,7 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 23),
                 child: InkWell(
                     onTap: () {
-                  Get.to(()=> HomePage());
+                  Get.to(()=> const HomePage());
                   },
                   child: SizedBox(
                     height: 35,
@@ -44,8 +63,8 @@ class HomePage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(left: 45),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 45),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -85,7 +104,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Row(
                 children: [
                   Padding(
@@ -99,8 +118,8 @@ class HomePage extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 20,),
-              Row(
+              const SizedBox(height: 20,),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Monday, 13 May 2024",
@@ -140,10 +159,10 @@ class HomePage extends StatelessWidget {
                             ),
                             color: Color.fromRGBO(255, 0, 0, 0.56),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                 "Let’s get started",
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
                   color: ColorsConfig.primaryColor, 
@@ -154,12 +173,12 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Center(
                 child: Container(
-                  padding: EdgeInsets.only(top: 20,bottom: 20,left: 13,right: 13),
+                  padding: const EdgeInsets.only(top: 20,bottom: 20,left: 13,right: 13),
                   height: 255,
                   width: 449,
                   child: Column(
@@ -174,14 +193,14 @@ class HomePage extends StatelessWidget {
                                 
                               },
                               child: Container(
-                                padding: EdgeInsets.only(top: 5,
+                                padding: const EdgeInsets.only(top: 5,
                                 bottom: 5),
                                 width: 90,
                                 height: 85,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(23),
                                   border: Border.all(width: 1,color: ColorsConfig.primaryColor),
-                                  gradient: LinearGradient(colors: [
+                                  gradient: const LinearGradient(colors: [
                                     Color.fromARGB(255, 53, 51, 51),
                                     Color.fromARGB(255, 87, 87, 86),
                                     Color.fromARGB(255, 53, 51, 51),
@@ -195,7 +214,7 @@ class HomePage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Image.asset('assets/images/PersonalTrainer.png'),
-                                    Text("Personal Trainer",
+                                    const Text("Personal Trainer",
                                     style: TextStyle(
                                       fontSize: 9,
                                       fontWeight: FontWeight.w700,
@@ -214,13 +233,13 @@ class HomePage extends StatelessWidget {
                                 
                               },
                               child: Container(
-                                padding: EdgeInsets.only(top: 15,bottom: 5),
+                                padding: const EdgeInsets.only(top: 15,bottom: 5),
                                 width: 90,
                                 height: 85,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(23),
                                   border: Border.all(width: 1,color: ColorsConfig.primaryColor),
-                                  gradient: LinearGradient(colors: [
+                                  gradient: const LinearGradient(colors: [
                                     Color.fromARGB(255, 53, 51, 51),
                                     Color.fromARGB(255, 87, 87, 86),
                                     Color.fromARGB(255, 53, 51, 51),
@@ -239,8 +258,8 @@ class HomePage extends StatelessWidget {
                                         Image.asset('assets/images/medical-icon_i-nutrition.png'),
                                       ],
                                     ),
-                                    Spacer(),
-                                    Row(
+                                    const Spacer(),
+                                    const Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text("Nutrition",
@@ -264,13 +283,13 @@ class HomePage extends StatelessWidget {
                                 
                               },
                               child: Container(
-                                padding: EdgeInsets.only(top: 15,bottom: 5),
+                                padding: const EdgeInsets.only(top: 15,bottom: 5),
                                 width: 90,
                                 height: 85,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(23),
                                   border: Border.all(width: 1,color: ColorsConfig.primaryColor),
-                                  gradient: LinearGradient(colors: [
+                                  gradient: const LinearGradient(colors: [
                                     Color.fromARGB(255, 53, 51, 51),
                                     Color.fromARGB(255, 87, 87, 86),
                                     Color.fromARGB(255, 53, 51, 51),
@@ -284,8 +303,8 @@ class HomePage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset('assets/images/Vector.png'),
-                                    Spacer(),
-                                    Text("Schedule",
+                                    const Spacer(),
+                                    const Text("Schedule",
                                     style: TextStyle(
                                       fontSize: 9,
                                       fontWeight: FontWeight.w700,
@@ -304,13 +323,13 @@ class HomePage extends StatelessWidget {
                                 
                               },
                               child: Container(
-                                padding: EdgeInsets.only(top: 10,bottom: 5),
+                                padding: const EdgeInsets.only(top: 10,bottom: 5),
                                 width: 90,
                                 height: 85,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(23),
                                   border: Border.all(width: 1,color: ColorsConfig.primaryColor),
-                                  gradient: LinearGradient(colors: [
+                                  gradient: const LinearGradient(colors: [
                                     Color.fromARGB(255, 53, 51, 51),
                                     Color.fromARGB(255, 87, 87, 86),
                                     Color.fromARGB(255, 53, 51, 51),
@@ -324,8 +343,8 @@ class HomePage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset('assets/images/scale.png'),
-                                    Spacer(),
-                                    Text("Calculate BMI",
+                                    const Spacer(),
+                                    const Text("Calculate BMI",
                                     style: TextStyle(
                                       fontSize: 9,
                                       fontWeight: FontWeight.w700,
@@ -346,7 +365,7 @@ class HomePage extends StatelessWidget {
                           
                         ],
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -357,13 +376,13 @@ class HomePage extends StatelessWidget {
                                 
                               },
                               child: Container(
-                                padding: EdgeInsets.only(top: 10,bottom: 5),
+                                padding: const EdgeInsets.only(top: 10,bottom: 5),
                                 width: 90,
                                 height: 85,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(23),
                                   border: Border.all(width: 1,color: ColorsConfig.primaryColor),
-                                  gradient: LinearGradient(colors: [
+                                  gradient: const LinearGradient(colors: [
                                     Color.fromARGB(255, 53, 51, 51),
                                     Color.fromARGB(255, 87, 87, 86),
                                     Color.fromARGB(255, 53, 51, 51),
@@ -377,8 +396,8 @@ class HomePage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset('assets/images/Treadmill.png'),
-                                    Spacer(),
-                                    Text("Workouts",
+                                    const Spacer(),
+                                    const Text("Workouts",
                                     style: TextStyle(
                                       fontSize: 9,
                                       fontWeight: FontWeight.w700,
@@ -397,13 +416,13 @@ class HomePage extends StatelessWidget {
                                 
                               },
                               child: Container(
-                                padding: EdgeInsets.only(top: 10,bottom: 5),
+                                padding: const EdgeInsets.only(top: 10,bottom: 5),
                                 width: 90,
                                 height: 85,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(23),
                                   border: Border.all(width: 1,color: ColorsConfig.primaryColor),
-                                  gradient: LinearGradient(colors: [
+                                  gradient: const LinearGradient(colors: [
                                     Color.fromARGB(255, 53, 51, 51),
                                     Color.fromARGB(255, 87, 87, 86),
                                     Color.fromARGB(255, 53, 51, 51),
@@ -417,8 +436,8 @@ class HomePage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset('assets/images/Barbell.png'),
-                                    Spacer(),
-                                    Text("Consultation",
+                                    const Spacer(),
+                                    const Text("Consultation",
                                     style: TextStyle(
                                       fontSize: 9,
                                       fontWeight: FontWeight.w700,
@@ -437,13 +456,13 @@ class HomePage extends StatelessWidget {
                                 
                               },
                               child: Container(
-                                padding: EdgeInsets.only(top: 10,bottom: 5),
+                                padding: const EdgeInsets.only(top: 10,bottom: 5),
                                 width: 90,
                                 height: 85,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(23),
                                   border: Border.all(width: 1,color: ColorsConfig.primaryColor),
-                                  gradient: LinearGradient(colors: [
+                                  gradient: const LinearGradient(colors: [
                                     Color.fromARGB(255, 53, 51, 51),
                                     Color.fromARGB(255, 87, 87, 86),
                                     Color.fromARGB(255, 53, 51, 51),
@@ -457,8 +476,8 @@ class HomePage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset('assets/images/map.png'),
-                                    Spacer(),
-                                    Text("Nearby Gyms",
+                                    const Spacer(),
+                                    const Text("Nearby Gyms",
                                     style: TextStyle(
                                       fontSize: 9,
                                       fontWeight: FontWeight.w700,
@@ -477,13 +496,13 @@ class HomePage extends StatelessWidget {
                                 
                               },
                               child: Container(
-                                padding: EdgeInsets.only(top: 10,bottom: 5),
+                                padding: const EdgeInsets.only(top: 10,bottom: 5),
                                 width: 90,
                                 height: 85,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(23),
                                   border: Border.all(width: 1,color: ColorsConfig.primaryColor),
-                                  gradient: LinearGradient(colors: [
+                                  gradient: const LinearGradient(colors: [
                                     Color.fromARGB(255, 53, 51, 51),
                                     Color.fromARGB(255, 87, 87, 86),
                                     Color.fromARGB(255, 53, 51, 51),
@@ -497,8 +516,8 @@ class HomePage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset('assets/images/arcticons.png'),
-                                    Spacer(),
-                                    Text("Bundle Prices",
+                                    const Spacer(),
+                                    const Text("Bundle Prices",
                                     style: TextStyle(
                                       fontSize: 9,
                                       fontWeight: FontWeight.w700,
@@ -522,7 +541,427 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-              )
+              ),
+              const SizedBox(height: 20,),
+              Expanded(child: 
+              PageView(
+                controller: _pageController,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18,right: 18),
+                    child: Container(
+                      padding: EdgeInsets.only(left: 10),
+                      width: 393.15,
+                      height: 60,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      bottomRight: Radius.circular(40),
+                    ),
+                    color: ColorsConfig.transred,
+                      ),
+                      child: Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 60,
+                                width: 60,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      child: Text("Active Trainer",style: 
+                                      TextStyle(
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w700,
+                                        color: ColorsConfig.primaryColor
+                                      ),),
+                                    ),
+                                  ],
+                                ),
+                                decoration: BoxDecoration(
+                                  border: Border.all(width: 1,color: ColorsConfig.primaryColor),
+                                  borderRadius: BorderRadius.circular(100)
+                                ),
+                              ),
+                             
+                            ],
+                          ),
+                           SizedBox(width: 10,),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            child: Image.asset('assets/images/Ellipse2.png'),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100)
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Column(mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Shieno",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w700,
+                                  color: ColorsConfig.primaryColor
+                                ),
+                              ),
+                              Text(
+                                """Wanted to ask if you’re available for a
+portrait shoot next week.""",
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorsConfig.primaryColor,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18,right: 18),
+                    child: Container(
+                      padding: EdgeInsets.only(left: 10),
+                      width: 393.15,
+                      height: 60,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      bottomRight: Radius.circular(40),
+                    ),
+                    color: ColorsConfig.transred,
+                      ),
+                      child: Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 60,
+                                width: 60,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      child: Text("Active Trainer",style: 
+                                      TextStyle(
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w700,
+                                        color: ColorsConfig.primaryColor
+                                      ),),
+                                    ),
+                                  ],
+                                ),
+                                decoration: BoxDecoration(
+                                  border: Border.all(width: 1,color: ColorsConfig.primaryColor),
+                                  borderRadius: BorderRadius.circular(100)
+                                ),
+                              ),
+                             
+                            ],
+                          ),
+                           SizedBox(width: 10,),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            child: Image.asset('assets/images/Ellipse2.png'),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100)
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Column(mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Shieno",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w700,
+                                  color: ColorsConfig.primaryColor
+                                ),
+                              ),
+                              Text(
+                                """Wanted to ask if you’re available for a
+portrait shoot next week.""",
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorsConfig.primaryColor,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18,right: 18),
+                    child: Container(
+                      padding: EdgeInsets.only(left: 10),
+                      width: 393.15,
+                      height: 60,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      bottomRight: Radius.circular(40),
+                    ),
+                    color: ColorsConfig.transred,
+                      ),
+                      child: Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 60,
+                                width: 60,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      child: Text("Active Trainer",style: 
+                                      TextStyle(
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w700,
+                                        color: ColorsConfig.primaryColor
+                                      ),),
+                                    ),
+                                  ],
+                                ),
+                                decoration: BoxDecoration(
+                                  border: Border.all(width: 1,color: ColorsConfig.primaryColor),
+                                  borderRadius: BorderRadius.circular(100)
+                                ),
+                              ),
+                             
+                            ],
+                          ),
+                           SizedBox(width: 10,),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            child: Image.asset('assets/images/Ellipse2.png'),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100)
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Column(mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Shieno",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w700,
+                                  color: ColorsConfig.primaryColor
+                                ),
+                              ),
+                              Text(
+                                """Wanted to ask if you’re available for a
+portrait shoot next week.""",
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorsConfig.primaryColor,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18,right: 18),
+                    child: Container(
+                      padding: EdgeInsets.only(left: 10),
+                      width: 393.15,
+                      height: 60,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      bottomRight: Radius.circular(40),
+                    ),
+                    color: ColorsConfig.transred,
+                      ),
+                      child: Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 60,
+                                width: 60,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      child: Text("Active Trainer",style: 
+                                      TextStyle(
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w700,
+                                        color: ColorsConfig.primaryColor
+                                      ),),
+                                    ),
+                                  ],
+                                ),
+                                decoration: BoxDecoration(
+                                  border: Border.all(width: 1,color: ColorsConfig.primaryColor),
+                                  borderRadius: BorderRadius.circular(100)
+                                ),
+                              ),
+                             
+                            ],
+                          ),
+                           SizedBox(width: 10,),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            child: Image.asset('assets/images/Ellipse2.png'),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100)
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Column(mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Shieno",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w700,
+                                  color: ColorsConfig.primaryColor
+                                ),
+                              ),
+                              Text(
+                                """Wanted to ask if you’re available for a
+portrait shoot next week.""",
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorsConfig.primaryColor,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              )),
+              SizedBox(height: 50,),
+               Row(mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SmoothPageIndicator(
+                  controller: _pageController,
+                  count: 4,
+                  
+                  effect: ExpandingDotsEffect(
+                    
+                    dotHeight: 14.0,
+                    dotWidth: 14.0,
+                    spacing: 8.0,
+                    radius: 20,
+                    
+                    dotColor: ColorsConfig.primaryColor,
+                    activeDotColor: ColorsConfig.redColor,
+                  ),
+                ),
+        
+              ],),
+              const SizedBox(height: 50,),
+              Container(
+            height: 47,
+            width: 430,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(240, 197, 197, 194),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                InkWell(
+                  onTap: () {
+                    Get.to(()=> HomePage());
+                  },
+                  child: Container(
+                    width: 45.87,
+                    height: 35.66,
+                    child: Image.asset('assets/images/home.png'),
+                  ),
+                ),
+                InkWell(
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
+                  child: Container(
+                    height: 40.89,
+                    width: 40,
+                    child: Image.asset('assets/images/search.png'),
+                  ),
+                ),
+                 SizedBox(width: 5,),
+
+                InkWell(
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
+                  child: Container(
+                    height: 35.66,
+                    width: 80.27,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: ColorsConfig.redColor
+                    ),
+                    child: Center(child: Image.asset('assets/images/plus.png')),
+                  ),
+                ),
+                SizedBox(width: 5,),
+                InkWell(
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
+                  child: Container(
+                    width: 40,
+                    height: 40.89,
+                    child: Image.asset('assets/images/comment.png'),
+                  ),
+                ),
+                InkWell(
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
+                  child: Container(
+                    width: 40,
+                    height: 40.89,
+                    child: Image.asset('assets/images/person.png'),
+                  ),
+                )
+
+              ],
+            ),
+          )
+              
   
 
 
