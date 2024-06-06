@@ -16,114 +16,116 @@ class Explore extends StatelessWidget {
         final width = MediaQuery.of(context).size.width;
 
     return  Scaffold(
-      body:Container(
-        height: height,
-        width: width,        
-        decoration: const BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/images/explore.png'),fit: BoxFit.fill)
-        ),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 370,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: Container(
-                    height: 46,
-                    width: 14,
-                    decoration: BoxDecoration(
-                       border: Border.all(width: 1,color: ColorsConfig.blackVariantColor) ,
-                      borderRadius: const BorderRadius.all(Radius.circular(100),
-                      ),
-                      color:ColorsConfig.redColor,
-                    ),
-                    ),
-                ),
+      body:Center(
+        child: Container(
+          height: height,
+          width: width,        
+          decoration: const BoxDecoration(
+            image: DecorationImage(image: AssetImage('assets/images/explore.png'),fit: BoxFit.fill)
+          ),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 370,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Container(
-                    height: 64,
-                    width: 19,
-                    decoration: BoxDecoration(
-                       border: Border.all(width: 1,color: ColorsConfig.blackVariantColor) ,
-                      borderRadius: const BorderRadius.all(Radius.circular(100),
-                      ),
-                      color:ColorsConfig.redColor,
-                    ),
-                    ),
-                  ),
-                   const Padding(
-                     padding: EdgeInsets.only(left: 4,right: 4),
-                     child: Text("GYM RATS",style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 13,
-                      color: ColorsConfig.primaryColor,
-                      fontFamily: "Moul",
-                      
-                      
-                      
-                     ),),
-                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Container(
-                    height: 64,
-                    width: 19,
-                    decoration: BoxDecoration(
-                       border: Border.all(width: 1,color: ColorsConfig.blackVariantColor) ,
-                      borderRadius: const BorderRadius.all(Radius.circular(100),
-                      ),
-                      color:ColorsConfig.redColor,
-                    ),
-                    ),
-                  ),Padding(
                     padding: const EdgeInsets.all(2.0),
                     child: Container(
-                    height: 46,
-                    width: 14,
-                    decoration: BoxDecoration(
-                       border: Border.all(width: 1,color: ColorsConfig.blackVariantColor) ,
-                      borderRadius: const BorderRadius.all(Radius.circular(100),
+                      height: 46,
+                      width: 14,
+                      decoration: BoxDecoration(
+                         border: Border.all(width: 1,color: ColorsConfig.blackVariantColor) ,
+                        borderRadius: const BorderRadius.all(Radius.circular(100),
+                        ),
+                        color:ColorsConfig.redColor,
                       ),
-                      color:ColorsConfig.redColor,
-                    ),
-                    ),
+                      ),
                   ),
-      
-              ],
-            ),
-            const SizedBox(height: 315,),
-            InkWell(
-              onTap: (){Get.to(infopage1());},
-              child: Container(
-                height: 56,
-                width: 336,
-                decoration: BoxDecoration(
-                  color: ColorsConfig.primaryColor,
-                  border: Border.all(width: 1,color: ColorsConfig.blackVariantColor),
-                  borderRadius: const BorderRadius.all(Radius.circular(20))
-                ),
-                child: const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Explore",style: TextStyle(fontWeight: FontWeight.w700,
-                    fontSize: 21,
-                    color: ColorsConfig.blackVariantColor,
-                    
-                    ),),
-                  ],
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Container(
+                      height: 64,
+                      width: 19,
+                      decoration: BoxDecoration(
+                         border: Border.all(width: 1,color: ColorsConfig.blackVariantColor) ,
+                        borderRadius: const BorderRadius.all(Radius.circular(100),
+                        ),
+                        color:ColorsConfig.redColor,
+                      ),
+                      ),
+                    ),
+                     const Padding(
+                       padding: EdgeInsets.only(left: 4,right: 4),
+                       child: Text("GYM RATS",style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 13,
+                        color: ColorsConfig.primaryColor,
+                        fontFamily: "Moul",
+                        
+                        
+                        
+                       ),),
+                     ),
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Container(
+                      height: 64,
+                      width: 19,
+                      decoration: BoxDecoration(
+                         border: Border.all(width: 1,color: ColorsConfig.blackVariantColor) ,
+                        borderRadius: const BorderRadius.all(Radius.circular(100),
+                        ),
+                        color:ColorsConfig.redColor,
+                      ),
+                      ),
+                    ),Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: Container(
+                      height: 46,
+                      width: 14,
+                      decoration: BoxDecoration(
+                         border: Border.all(width: 1,color: ColorsConfig.blackVariantColor) ,
+                        borderRadius: const BorderRadius.all(Radius.circular(100),
+                        ),
+                        color:ColorsConfig.redColor,
+                      ),
+                      ),
+                    ),
+        
+                ],
+              ),
+              const SizedBox(height: 315,),
+              InkWell(
+                onTap: (){Get.to(infopage1());},
+                child: Container(
+                  height: 56,
+                  width: 336,
+                  decoration: BoxDecoration(
+                    color: ColorsConfig.primaryColor,
+                    border: Border.all(width: 1,color: ColorsConfig.blackVariantColor),
+                    borderRadius: const BorderRadius.all(Radius.circular(20))
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Explore",style: TextStyle(fontWeight: FontWeight.w700,
+                      fontSize: 21,
+                      color: ColorsConfig.blackVariantColor,
+                      
+                      ),),
+                    ],
+                  ),
                 ),
               ),
-            ),
+              
+            ],
             
-          ],
+          ),
           
         ),
-        
       )
     );
   }
