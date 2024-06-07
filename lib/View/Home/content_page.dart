@@ -219,24 +219,24 @@ class ContenPage extends StatelessWidget {
                               Row(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(2),
                                     child: Container(
-                                      width: 150,
-                                      height: 290,
+                                      width: 170,
+                                      height: 310,
                                       clipBehavior: Clip.antiAlias,
-                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      child: Image.asset('assets/images/image 5.png',fit: BoxFit.cover,),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(2),
                                     child: Container(
-                                      width: 150,
-                                      height: 290,
+                                      width: 170,
+                                      height: 310,
                                       clipBehavior: Clip.antiAlias,
-                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      child: Image.asset('assets/images/image 6.png',fit: BoxFit.cover,),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
@@ -244,28 +244,28 @@ class ContenPage extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              SizedBox(height: 15,),
+                              SizedBox(height: 10,),
                               Row(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(2),
                                     child: Container(
-                                      width: 150,
-                                      height: 290,
+                                      width: 170,
+                                      height: 310,
                                       clipBehavior: Clip.antiAlias,
-                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      child: Image.asset('assets/images/image 5.png',fit: BoxFit.cover,),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(2),
                                     child: Container(
-                                      width: 150,
-                                      height: 290,
+                                      width: 170,
+                                      height: 310,
                                       clipBehavior: Clip.antiAlias,
-                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      child: Image.asset('assets/images/image 6.png',fit: BoxFit.cover,),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
@@ -273,27 +273,28 @@ class ContenPage extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              SizedBox(height: 15,),Row(
+                              SizedBox(height: 10,),
+                               Row(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(2),
                                     child: Container(
-                                      width: 150,
-                                      height: 290,
+                                      width: 170,
+                                      height: 310,
                                       clipBehavior: Clip.antiAlias,
-                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      child: Image.asset('assets/images/image 5.png',fit: BoxFit.cover,),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(2),
                                     child: Container(
-                                      width: 150,
-                                      height: 290,
+                                      width: 170,
+                                      height: 310,
                                       clipBehavior: Clip.antiAlias,
-                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      child: Image.asset('assets/images/image 6.png',fit: BoxFit.cover,),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
@@ -301,27 +302,28 @@ class ContenPage extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              SizedBox(height: 15,),Row(
+                              SizedBox(height: 10,),
+                               Row(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(2),
                                     child: Container(
-                                      width: 150,
-                                      height: 290,
+                                      width: 170,
+                                      height: 310,
                                       clipBehavior: Clip.antiAlias,
-                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      child: Image.asset('assets/images/image 5.png',fit: BoxFit.cover,),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(2),
                                     child: Container(
-                                      width: 150,
-                                      height: 290,
+                                      width: 170,
+                                      height: 310,
                                       clipBehavior: Clip.antiAlias,
-                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      child: Image.asset('assets/images/image 6.png',fit: BoxFit.cover,),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
@@ -329,27 +331,28 @@ class ContenPage extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              SizedBox(height: 15,),Row(
+                              SizedBox(height: 10,),
+                               Row(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(2),
                                     child: Container(
-                                      width: 150,
-                                      height: 290,
+                                      width: 170,
+                                      height: 310,
                                       clipBehavior: Clip.antiAlias,
-                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      child: Image.asset('assets/images/image 5.png',fit: BoxFit.cover,),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(2),
                                     child: Container(
-                                      width: 150,
-                                      height: 290,
+                                      width: 170,
+                                      height: 310,
                                       clipBehavior: Clip.antiAlias,
-                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      child: Image.asset('assets/images/image 6.png',fit: BoxFit.cover,),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
@@ -357,7 +360,8 @@ class ContenPage extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              SizedBox(height: 15,),
+                              SizedBox(height: 10,),
+                              
                             ],
                           ),
                         )
