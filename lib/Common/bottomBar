@@ -19,9 +19,9 @@ Container(
                   ),
                 ),
                 InkWell(
-                  // onTap: () {
-                  // Get.to(()=> HomePage());
-                  // },
+                  onTap: () {
+                  Get.to(()=> ContenPage());
+                  },
                   child: Container(
                     height: 40.89,
                     width: 40,

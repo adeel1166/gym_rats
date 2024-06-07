@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
+import 'package:gym_rats/View/Home/content_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -372,9 +373,9 @@ class _HomePageState extends State<HomePage> {
                             Padding(
                               padding: const EdgeInsets.all(2),
                               child: InkWell(
-                                onTap: () {
-                                  
-                                },
+                                // onTap: () {
+                                //   Get.to(()=>ExercisesPage());
+                                // },
                                 child: Container(
                                   padding: const EdgeInsets.only(top: 10,bottom: 5),
                                   width: 90,
@@ -911,9 +912,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   InkWell(
-                    // onTap: () {
-                    // Get.to(()=> HomePage());
-                    // },
+                    onTap: () {
+                    Get.to(()=> ContenPage());
+                    },
                     child: Container(
                       height: 40.89,
                       width: 40,

@@ -381,6 +381,7 @@ class AccountPage extends StatelessWidget {
                 height: 10,
                 
               ),
+              Spacer(),
               Container(
                 height: 47,
                 width: 430,

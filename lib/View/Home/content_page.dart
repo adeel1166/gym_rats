@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
@@ -13,21 +11,16 @@ class ContenPage extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
         final width = MediaQuery.of(context).size.width;
     return  Scaffold(
-      body: Center(
-        child: Container(
-          height: height,
-          width: width,
-          decoration: const BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/images/explore.png'),fit: BoxFit.fill),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 32,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 23),
-                  child: InkWell(
+      body: Stack(
+        children: <Widget>[
+          Positioned.fill(child: Image.asset('assets/images/explore.png',fit: BoxFit.cover,)),
+          Positioned(
+            top: 36,
+            left: 19,
+            child: 
+            Row(
+              children: [
+                  InkWell(
                     onTap: () {
                       Get.to(HomePage());
                     },
@@ -37,161 +30,421 @@ class ContenPage extends StatelessWidget {
                       child: Image.asset('assets/images/ep_back.png',fit: BoxFit.cover,),
                     ),
                   ),
-                ),
-                SizedBox(height: 1,),
+
+              ],
+            )
+          
+          ),
+          Positioned.fill(top: 74,child: 
+          Padding(
+            padding: const EdgeInsets.only(bottom: 47),
+            child: ListView(
+              scrollDirection: Axis.vertical,
+              children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(left: 16),
-                  child: Row(
-                    children: [
-                      Text("Discover",
-                      style: TextStyle(
-                        fontSize: 36,
-                        fontWeight: FontWeight.w400,
-                        color: ColorsConfig.primaryColor,
-                      ),),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 16),
-                  child: Row(
-                    children: [
-                      Text("Select your program",
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w900,
-                        color: ColorsConfig.primaryColor,
-                      ),),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 30,),
-                Row(
-                  children: [
-                    SizedBox(
-                      height: 346,
-                      width: width,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                      children:[Padding(
-                        padding: const EdgeInsets.only(left: 42),
-                        child: Container(
-                        width: 343,
-                        height: 346,
-                        child:Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text("Physical Fitness",
-                            style: TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.w800,
-                              color: ColorsConfig.primaryColor
-                            ),)
-                          ],
-                        ) ,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
-                        ),
-                                            ),
-                      ),
-                      SizedBox(width: 15,),
-                      Container(
-                        width: 343,
-                        height: 346,
-                        child:Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text("Physical Fitness",
-                            style: TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.w800,
-                              color: ColorsConfig.primaryColor
-                            ),)
-                          ],
-                        ) ,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
-                        ),
-                                            ),
-                                             SizedBox(width: 15,),
-                      Container(
-                        width: 343,
-                        height: 346,
-                        child:Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text("Physical Fitness",
-                            style: TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.w800,
-                              color: ColorsConfig.primaryColor
-                            ),)
-                          ],
-                        ) ,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
-                        ),
-                                            ),
-                       SizedBox(width: 15,),
-                      Container(
-                        width: 343,
-                        height: 346,
-                        child:Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text("Physical Fitness",
-                            style: TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.w800,
-                              color: ColorsConfig.primaryColor
-                            ),)
-                          ],
-                        ) ,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
-                        ),
-                                            ),
-                       SizedBox(width: 15,),
-                      Container(
-                        width: 343,
-                        height: 346,
-                        child:Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text("Physical Fitness",
-                            style: TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.w800,
-                              color: ColorsConfig.primaryColor
-                            ),)
-                          ],
-                        ) ,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
-                        ),
-                                            ),
-                      
-                      
-                      
-                      ]
+                      padding: const EdgeInsets.only(left: 16),
+                      child: Row(
+                        children: [
+                          Text("Discover",
+                          style: TextStyle(
+                            fontSize: 36,
+                            fontWeight: FontWeight.w400,
+                            color: ColorsConfig.primaryColor,
+                          ),),
+                        ],
                       ),
                     ),
-                  ],
+                    SizedBox(height: 10,),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16),
+                      child: Row(
+                        children: [
+                          Text("Select your program",
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w900,
+                            color: ColorsConfig.primaryColor,
+                          ),),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 15,),
+                    Row(
+                      children: [
+                        SizedBox(
+                          height: 346,
+                          width: width,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                          children:[Padding(
+                            padding: const EdgeInsets.only(left: 40),
+                            child: Container(
+                            width: 343,
+                            height: 346,
+                            child:Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text("Physical Fitness",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w800,
+                                  color: ColorsConfig.primaryColor
+                                ),)
+                              ],
+                            ) ,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
+                            ),
+                                                ),
+                          ),
+                          SizedBox(width: 15,),
+                          Container(
+                            width: 343,
+                            height: 346,
+                            child:Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text("Physical Fitness",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w800,
+                                  color: ColorsConfig.primaryColor
+                                ),)
+                              ],
+                            ) ,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
+                            ),
+                                                ),
+                                                 SizedBox(width: 15,),
+                          Container(
+                            width: 343,
+                            height: 346,
+                            child:Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text("Physical Fitness",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w800,
+                                  color: ColorsConfig.primaryColor
+                                ),)
+                              ],
+                            ) ,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
+                            ),
+                                                ),
+                           SizedBox(width: 15,),
+                          Container(
+                            width: 343,
+                            height: 346,
+                            child:Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text("Physical Fitness",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w800,
+                                  color: ColorsConfig.primaryColor
+                                ),)
+                              ],
+                            ) ,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
+                            ),
+                                                ),
+                           SizedBox(width: 15,),
+                          Container(
+                            width: 343,
+                            height: 346,
+                            child:Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text("Physical Fitness",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w800,
+                                  color: ColorsConfig.primaryColor
+                                ),)
+                              ],
+                            ) ,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
+                            ),
+                                                ),
+                          
+                          
+                          
+                          ]
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 15,),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16),
+                      child: Row(
+                        children: [
+                          Text("Browse all",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w900,
+                            color: ColorsConfig.primaryColor,
+                          ),),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 15,),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 1649,
+                          width: 349,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Container(
+                                      width: 150,
+                                      height: 290,
+                                      clipBehavior: Clip.antiAlias,
+                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Container(
+                                      width: 150,
+                                      height: 290,
+                                      clipBehavior: Clip.antiAlias,
+                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(height: 15,),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Container(
+                                      width: 150,
+                                      height: 290,
+                                      clipBehavior: Clip.antiAlias,
+                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Container(
+                                      width: 150,
+                                      height: 290,
+                                      clipBehavior: Clip.antiAlias,
+                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(height: 15,),Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Container(
+                                      width: 150,
+                                      height: 290,
+                                      clipBehavior: Clip.antiAlias,
+                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Container(
+                                      width: 150,
+                                      height: 290,
+                                      clipBehavior: Clip.antiAlias,
+                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(height: 15,),Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Container(
+                                      width: 150,
+                                      height: 290,
+                                      clipBehavior: Clip.antiAlias,
+                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Container(
+                                      width: 150,
+                                      height: 290,
+                                      clipBehavior: Clip.antiAlias,
+                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(height: 15,),Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Container(
+                                      width: 150,
+                                      height: 290,
+                                      clipBehavior: Clip.antiAlias,
+                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Container(
+                                      width: 150,
+                                      height: 290,
+                                      clipBehavior: Clip.antiAlias,
+                                      child: Image.asset('assets/images/Jogging.png',fit: BoxFit.cover,),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(height: 15,),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+            
+              ],
+            ),
+          )),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: 
+            Container(
+            height: 47,
+            width: 430,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(240, 197, 197, 194),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                InkWell(
+                  onTap: () {
+                    Get.to(()=> HomePage());
+                  },
+                  child: Container(
+                    width: 45.87,
+                    height: 35.66,
+                    child: Image.asset('assets/images/home.png'),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                  Get.to(()=> ContenPage());
+                  },
+                  child: Container(
+                    height: 40.89,
+                    width: 40,
+                    child: Image.asset('assets/images/search.png'),
+                  ),
+                ),
+                 SizedBox(width: 5,),
+
+                InkWell(
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
+                  child: Container(
+                    height: 35.66,
+                    width: 80.27,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: ColorsConfig.redColor
+                    ),
+                    child: Center(child: Image.asset('assets/images/plus.png')),
+                  ),
+                ),
+                SizedBox(width: 5,),
+                InkWell(
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
+                  child: Container(
+                    width: 40,
+                    height: 40.89,
+                    child: Image.asset('assets/images/comment.png'),
+                  ),
+                ),
+                InkWell(
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
+                  child: Container(
+                    width: 40,
+                    height: 40.89,
+                    child: Image.asset('assets/images/person.png'),
+                  ),
                 )
-            ],
-          ),
-        ),
+
+              ],
+            ),
+          )
+            )
+        ],
       ),
     );
   }
