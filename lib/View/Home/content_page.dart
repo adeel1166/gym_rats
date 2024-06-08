@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
+import 'package:gym_rats/View/Home/account_page.dart';
 
 class ContenPage extends StatelessWidget {
   const ContenPage({super.key});
@@ -434,9 +435,9 @@ class ContenPage extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  // onTap: () {
-                  // Get.to(()=> HomePage());
-                  // },
+                  onTap: () {
+                  Get.to(()=> AccountPage());
+                  },
                   child: Container(
                     width: 40,
                     height: 40.89,
