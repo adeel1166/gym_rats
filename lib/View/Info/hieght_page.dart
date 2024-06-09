@@ -60,7 +60,7 @@ class HeightPage extends StatelessWidget {
                   ),)
                 ],),
                 SizedBox(
-                  height: 15,
+                  height: 22,
                 ),
                 Container(
                   height: 240,

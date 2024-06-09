@@ -61,7 +61,7 @@ class WeightPage extends StatelessWidget {
                   ),)
                 ],),
                 SizedBox(
-                  height: 15,
+                  height: 0,
                 ),
                 Container(
                   height: 240,

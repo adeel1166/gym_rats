@@ -67,7 +67,7 @@ class _AgePageState extends State<AgePage> {
                   ),)
                 ],),
                 SizedBox(
-                  height: 15,
+                  height: 22,
                 ),
                 Container(
                   height: 240,

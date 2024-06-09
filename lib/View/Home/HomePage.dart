@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
+import 'package:gym_rats/Exercs/DetailPage.dart';
+import 'package:gym_rats/Exercs/GridDemo.dart';
+import 'package:gym_rats/Exercs/Model/m.dart';
+import 'package:gym_rats/Exercs/exercisespage.dart';
 import 'package:gym_rats/Model/chat_bot.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
 import 'package:gym_rats/View/Home/content_page.dart';
@@ -382,9 +386,9 @@ class _HomePageState extends State<HomePage> {
                                 Padding(
                                   padding: const EdgeInsets.all(2),
                                   child: InkWell(
-                                    // onTap: () {
-                                    //   Get.to(()=>ExercisesPage());
-                                    // },
+                                    onTap: () {
+                                      Get.to(()=>GridDemo());
+                                    },
                                     child: Container(
                                       padding: const EdgeInsets.only(top: 10,bottom: 5),
                                       width: 90,
