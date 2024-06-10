@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
-import 'package:gym_rats/Exercs/DetailPage.dart';
-import 'package:gym_rats/Exercs/GridDemo.dart';
-import 'package:gym_rats/Exercs/Model/m.dart';
-import 'package:gym_rats/Exercs/exercisespage.dart';
+import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/Model/chat_bot.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
 import 'package:gym_rats/View/Home/content_page.dart';
+import 'package:gym_rats/View/map_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -43,8 +41,14 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
+    // final height = MediaQuery.of(context).size.height;
         final width = MediaQuery.of(context).size.width;
+
+        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent, // Make status bar transparent
+      statusBarIconBrightness: Brightness.light, // Use light icons for the status bar
+    ));
+    
     return  Scaffold(
       body: Stack(
         children: <Widget>[
@@ -74,6 +78,9 @@ class _HomePageState extends State<HomePage> {
           Positioned.fill(
 
             top: 71,
+
+            
+
             child: 
           Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -467,8 +474,8 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(2),
                                   child: InkWell(
                                     onTap: () {
-                                      
-                                    },
+                                    Get.to(()=> CustomScreen());
+                                        },
                                     child: Container(
                                       padding: const EdgeInsets.only(top: 10,bottom: 5),
                                       width: 90,

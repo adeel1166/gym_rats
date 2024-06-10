@@ -4,7 +4,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gym_rats/Exercs/Model/Model.dart';
+import 'package:gym_rats/Model/Model.dart';
 
 class ExercisesPage extends StatefulWidget {
   final ExerciesModel? exerciesModel;

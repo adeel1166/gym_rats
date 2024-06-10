@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/Model/wieghtModel.dart';
+import 'package:gym_rats/View/Home/HomePage.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
 import 'package:gym_rats/View/Info/hieght_page.dart';
 
@@ -74,7 +75,7 @@ class WeightPage extends StatelessWidget {
                 children: [
                   GestureDetector(
                         onTap: () {
-                          Get.to(AccountPage());
+                          Get.to(HomePage());
                                           },
                         child: Container(
                                   height: 55.0,

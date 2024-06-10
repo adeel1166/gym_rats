@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
@@ -11,9 +12,17 @@ class ContenPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
         final width = MediaQuery.of(context).size.width;
+
+        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent, // Make status bar transparent
+      statusBarIconBrightness: Brightness.light, // Use light icons for the status bar
+    ));
+
+    
     return  Scaffold(
       body: Stack(
         children: <Widget>[
+          
           Positioned.fill(child: Image.asset('assets/images/explore.png',fit: BoxFit.cover,)),
           Positioned(
             top: 36,

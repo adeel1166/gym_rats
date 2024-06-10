@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Authentication/signup.dart';
+import 'package:gym_rats/View/Home/HomePage.dart';
 import 'package:gym_rats/View/Info/gender_page.dart';
 import 'package:gym_rats/View/Intro/getstarted.dart';
 
@@ -171,7 +172,7 @@ class SignIn extends StatelessWidget {
               children: [
                 GestureDetector(
                       onTap: () {
-                        Get.to(GenderPage());
+                        Get.to(HomePage());
                                         },
                       child: Container(
                                 height: 55.0,
