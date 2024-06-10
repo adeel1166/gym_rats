@@ -5,8 +5,8 @@ import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/Model/chat_bot.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
-import 'package:gym_rats/View/Home/content_page.dart';
-import 'package:gym_rats/View/map_page.dart';
+import 'package:gym_rats/View/Home/map_page.dart';
+import 'package:gym_rats/View/Info/age_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
     // final height = MediaQuery.of(context).size.height;
         final width = MediaQuery.of(context).size.width;
 
-        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent, // Make status bar transparent
       statusBarIconBrightness: Brightness.light, // Use light icons for the status bar
     ));
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                   InkWell(
                     onTap: () {
-                      Get.to(HomePage());
+                      Get.to(const HomePage());
                     },
                     child: SizedBox(
                       height: 35,
@@ -341,7 +341,7 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(2),
                                   child: InkWell(
                                     onTap: () {
-                                      
+                                      Get.to(()=>AgePage());
                                     },
                                     child: Container(
                                       padding: const EdgeInsets.only(top: 10,bottom: 5),
@@ -394,7 +394,7 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(2),
                                   child: InkWell(
                                     onTap: () {
-                                      Get.to(()=>GridDemo());
+                                      Get.to(()=>const GridDemo());
                                     },
                                     child: Container(
                                       padding: const EdgeInsets.only(top: 10,bottom: 5),
@@ -571,7 +571,7 @@ class _HomePageState extends State<HomePage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 18,right: 18),
                           child: Container(
-                            padding: EdgeInsets.only(left: 10),
+                            padding: const EdgeInsets.only(left: 10),
                             width: 393.15,
                             height: 60,
                             decoration: const BoxDecoration(
@@ -590,11 +590,15 @@ class _HomePageState extends State<HomePage> {
                                     Container(
                                       height: 60,
                                       width: 60,
-                                      child: Column(
+                                      decoration: BoxDecoration(
+                                        border: Border.all(width: 1,color: ColorsConfig.primaryColor),
+                                        borderRadius: BorderRadius.circular(100)
+                                      ),
+                                      child: const Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.only(left: 10),
+                                            padding: EdgeInsets.only(left: 10),
                                             child: Text("Active Trainer",style: 
                                             TextStyle(
                                               fontSize: 11,
@@ -604,15 +608,11 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                         ],
                                       ),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(width: 1,color: ColorsConfig.primaryColor),
-                                        borderRadius: BorderRadius.circular(100)
-                                      ),
                                     ),
                                    
                                   ],
                                 ),
-                                 SizedBox(width: 10,),
+                                 const SizedBox(width: 10,),
                                 Container(
                                   height: 60,
                                   width: 60,
@@ -621,8 +621,8 @@ class _HomePageState extends State<HomePage> {
                                     borderRadius: BorderRadius.circular(100)
                                   ),
                                 ),
-                                SizedBox(width: 10,),
-                                Column(mainAxisAlignment: MainAxisAlignment.center,
+                                const SizedBox(width: 10,),
+                                const Column(mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
@@ -651,7 +651,7 @@ portrait shoot next week.""",
                         Padding(
                           padding: const EdgeInsets.only(left: 18,right: 18),
                           child: Container(
-                            padding: EdgeInsets.only(left: 10),
+                            padding: const EdgeInsets.only(left: 10),
                             width: 393.15,
                             height: 60,
                             decoration: const BoxDecoration(
@@ -670,11 +670,15 @@ portrait shoot next week.""",
                                     Container(
                                       height: 60,
                                       width: 60,
-                                      child: Column(
+                                      decoration: BoxDecoration(
+                                        border: Border.all(width: 1,color: ColorsConfig.primaryColor),
+                                        borderRadius: BorderRadius.circular(100)
+                                      ),
+                                      child: const Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.only(left: 10),
+                                            padding: EdgeInsets.only(left: 10),
                                             child: Text("Active Trainer",style: 
                                             TextStyle(
                                               fontSize: 11,
@@ -684,15 +688,11 @@ portrait shoot next week.""",
                                           ),
                                         ],
                                       ),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(width: 1,color: ColorsConfig.primaryColor),
-                                        borderRadius: BorderRadius.circular(100)
-                                      ),
                                     ),
                                    
                                   ],
                                 ),
-                                 SizedBox(width: 10,),
+                                 const SizedBox(width: 10,),
                                 Container(
                                   height: 60,
                                   width: 60,
@@ -701,8 +701,8 @@ portrait shoot next week.""",
                                     borderRadius: BorderRadius.circular(100)
                                   ),
                                 ),
-                                SizedBox(width: 10,),
-                                Column(mainAxisAlignment: MainAxisAlignment.center,
+                                const SizedBox(width: 10,),
+                                const Column(mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
@@ -731,7 +731,7 @@ portrait shoot next week.""",
                         Padding(
                           padding: const EdgeInsets.only(left: 18,right: 18),
                           child: Container(
-                            padding: EdgeInsets.only(left: 10),
+                            padding: const EdgeInsets.only(left: 10),
                             width: 393.15,
                             height: 60,
                             decoration: const BoxDecoration(
@@ -750,11 +750,15 @@ portrait shoot next week.""",
                                     Container(
                                       height: 60,
                                       width: 60,
-                                      child: Column(
+                                      decoration: BoxDecoration(
+                                        border: Border.all(width: 1,color: ColorsConfig.primaryColor),
+                                        borderRadius: BorderRadius.circular(100)
+                                      ),
+                                      child: const Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.only(left: 10),
+                                            padding: EdgeInsets.only(left: 10),
                                             child: Text("Active Trainer",style: 
                                             TextStyle(
                                               fontSize: 11,
@@ -764,15 +768,11 @@ portrait shoot next week.""",
                                           ),
                                         ],
                                       ),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(width: 1,color: ColorsConfig.primaryColor),
-                                        borderRadius: BorderRadius.circular(100)
-                                      ),
                                     ),
                                    
                                   ],
                                 ),
-                                 SizedBox(width: 10,),
+                                 const SizedBox(width: 10,),
                                 Container(
                                   height: 60,
                                   width: 60,
@@ -781,8 +781,8 @@ portrait shoot next week.""",
                                     borderRadius: BorderRadius.circular(100)
                                   ),
                                 ),
-                                SizedBox(width: 10,),
-                                Column(mainAxisAlignment: MainAxisAlignment.center,
+                                const SizedBox(width: 10,),
+                                const Column(mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
@@ -811,7 +811,7 @@ portrait shoot next week.""",
                         Padding(
                           padding: const EdgeInsets.only(left: 18,right: 18),
                           child: Container(
-                            padding: EdgeInsets.only(left: 10),
+                            padding: const EdgeInsets.only(left: 10),
                             width: 393.15,
                             height: 60,
                             decoration: const BoxDecoration(
@@ -830,11 +830,15 @@ portrait shoot next week.""",
                                     Container(
                                       height: 60,
                                       width: 60,
-                                      child: Column(
+                                      decoration: BoxDecoration(
+                                        border: Border.all(width: 1,color: ColorsConfig.primaryColor),
+                                        borderRadius: BorderRadius.circular(100)
+                                      ),
+                                      child: const Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.only(left: 10),
+                                            padding: EdgeInsets.only(left: 10),
                                             child: Text("Active Trainer",style: 
                                             TextStyle(
                                               fontSize: 11,
@@ -844,15 +848,11 @@ portrait shoot next week.""",
                                           ),
                                         ],
                                       ),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(width: 1,color: ColorsConfig.primaryColor),
-                                        borderRadius: BorderRadius.circular(100)
-                                      ),
                                     ),
                                    
                                   ],
                                 ),
-                                 SizedBox(width: 10,),
+                                 const SizedBox(width: 10,),
                                 Container(
                                   height: 60,
                                   width: 60,
@@ -861,8 +861,8 @@ portrait shoot next week.""",
                                     borderRadius: BorderRadius.circular(100)
                                   ),
                                 ),
-                                SizedBox(width: 10,),
-                                Column(mainAxisAlignment: MainAxisAlignment.center,
+                                const SizedBox(width: 10,),
+                                const Column(mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
@@ -890,14 +890,14 @@ portrait shoot next week.""",
                         )
                       ],
                     )),
-                    SizedBox(height: 30,),
+                    const SizedBox(height: 30,),
                      Row(mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SmoothPageIndicator(
                         controller: _pageController,
                         count: 4,
                         
-                        effect: ExpandingDotsEffect(
+                        effect: const ExpandingDotsEffect(
                           
                           dotHeight: 14.0,
                           dotWidth: 14.0,
@@ -914,7 +914,7 @@ portrait shoot next week.""",
                     Container(
                   height: 47,
                   width: 430,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color.fromARGB(240, 197, 197, 194),
                   ),
                   child: Row(
@@ -923,7 +923,7 @@ portrait shoot next week.""",
                     children: <Widget>[
                       InkWell(
                         onTap: () {
-                          Get.to(()=> HomePage());
+                          Get.to(()=> const HomePage());
                         },
                         child: Container(
                           width: 45.87,
@@ -933,7 +933,7 @@ portrait shoot next week.""",
                       ),
                       InkWell(
                         onTap: () {
-                        Get.to(()=> ContenPage());
+                        Get.to(()=> const GridDemo());
                         },
                         child: Container(
                           height: 40.89,
@@ -941,7 +941,7 @@ portrait shoot next week.""",
                           child: Image.asset('assets/images/search.png'),
                         ),
                       ),
-                       SizedBox(width: 5,),
+                       const SizedBox(width: 5,),
             
                       InkWell(
                         // onTap: () {
@@ -957,7 +957,7 @@ portrait shoot next week.""",
                           child: Center(child: Image.asset('assets/images/plus.png')),
                         ),
                       ),
-                      SizedBox(width: 5,),
+                      const SizedBox(width: 5,),
                       InkWell(
                         // onTap: () {
                         // Get.to(()=> HomePage());
@@ -970,7 +970,7 @@ portrait shoot next week.""",
                       ),
                       InkWell(
                         onTap: () {
-                        Get.to(()=> AccountPage());
+                        Get.to(()=> const AccountPage());
                         },
                         child: Container(
                           width: 40,

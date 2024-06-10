@@ -20,7 +20,7 @@ Container(
                 ),
                 InkWell(
                   onTap: () {
-                  Get.to(()=> ContenPage());
+                  Get.to(()=> GridDemo());
                   },
                   child: Container(
                     height: 40.89,

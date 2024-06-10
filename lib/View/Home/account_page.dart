@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Authentication/sign_in.dart';
+import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
-import 'package:gym_rats/View/Home/content_page.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -411,7 +411,7 @@ class AccountPage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                      Get.to(()=> ContenPage());
+                      Get.to(()=> GridDemo());
                       },
                       child: Container(
                         height: 40.89,

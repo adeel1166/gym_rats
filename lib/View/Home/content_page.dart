@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
+import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
 
@@ -10,10 +11,10 @@ class ContenPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
+    // final height = MediaQuery.of(context).size.height;
         final width = MediaQuery.of(context).size.width;
 
-        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent, // Make status bar transparent
       statusBarIconBrightness: Brightness.light, // Use light icons for the status bar
     ));
@@ -32,7 +33,7 @@ class ContenPage extends StatelessWidget {
               children: [
                   InkWell(
                     onTap: () {
-                      Get.to(HomePage());
+                      Get.to(const HomePage());
                     },
                     child: SizedBox(
                       height: 35,
@@ -51,8 +52,8 @@ class ContenPage extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.vertical,
               children: <Widget>[
-                Padding(
-                      padding: const EdgeInsets.only(left: 16),
+                const Padding(
+                      padding: EdgeInsets.only(left: 16),
                       child: Row(
                         children: [
                           Text("Discover",
@@ -64,9 +65,9 @@ class ContenPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 10,),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16),
+                    const SizedBox(height: 10,),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 16),
                       child: Row(
                         children: [
                           Text("Select your program",
@@ -78,7 +79,7 @@ class ContenPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 15,),
+                    const SizedBox(height: 15,),
                     Row(
                       children: [
                         SizedBox(
@@ -91,7 +92,7 @@ class ContenPage extends StatelessWidget {
                             child: Container(
                             width: 343,
                             height: 346,
-                            child:Column(
+                            child:const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -105,15 +106,15 @@ class ContenPage extends StatelessWidget {
                             ) ,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
+                              image: const DecorationImage(image: AssetImage('assets/images/Jogging.png'))
                             ),
                                                 ),
                           ),
-                          SizedBox(width: 15,),
+                          const SizedBox(width: 15,),
                           Container(
                             width: 343,
                             height: 346,
-                            child:Column(
+                            child:const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -127,14 +128,35 @@ class ContenPage extends StatelessWidget {
                             ) ,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
+                              image: const DecorationImage(image: AssetImage('assets/images/Jogging.png'))
                             ),
                                                 ),
-                                                 SizedBox(width: 15,),
+                                                 const SizedBox(width: 15,),
                           Container(
                             width: 343,
                             height: 346,
-                            child:Column(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              image: const DecorationImage(image: AssetImage('assets/images/Jogging.png'))
+                            ),
+                            child:const Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text("Physical Fitness",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w800,
+                                  color: ColorsConfig.primaryColor
+                                ),)
+                              ],
+                            ) ,
+                                                ),
+                           const SizedBox(width: 15,),
+                          Container(
+                            width: 343,
+                            height: 346,
+                            child:const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -148,14 +170,14 @@ class ContenPage extends StatelessWidget {
                             ) ,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
+                              image: const DecorationImage(image: AssetImage('assets/images/Jogging.png'))
                             ),
                                                 ),
-                           SizedBox(width: 15,),
+                           const SizedBox(width: 15,),
                           Container(
                             width: 343,
                             height: 346,
-                            child:Column(
+                            child:const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -169,28 +191,7 @@ class ContenPage extends StatelessWidget {
                             ) ,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
-                            ),
-                                                ),
-                           SizedBox(width: 15,),
-                          Container(
-                            width: 343,
-                            height: 346,
-                            child:Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text("Physical Fitness",
-                                style: TextStyle(
-                                  fontSize: 28,
-                                  fontWeight: FontWeight.w800,
-                                  color: ColorsConfig.primaryColor
-                                ),)
-                              ],
-                            ) ,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(image: AssetImage('assets/images/Jogging.png'))
+                              image: const DecorationImage(image: AssetImage('assets/images/Jogging.png'))
                             ),
                                                 ),
                           
@@ -201,9 +202,9 @@ class ContenPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 15,),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16),
+                    const SizedBox(height: 15,),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 16),
                       child: Row(
                         children: [
                           Text("Browse all",
@@ -215,7 +216,7 @@ class ContenPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 15,),
+                    const SizedBox(height: 15,),
 
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -254,7 +255,7 @@ class ContenPage extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              SizedBox(height: 10,),
+                              const SizedBox(height: 10,),
                               Row(
                                 children: [
                                   Padding(
@@ -283,7 +284,7 @@ class ContenPage extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              SizedBox(height: 10,),
+                              const SizedBox(height: 10,),
                                Row(
                                 children: [
                                   Padding(
@@ -312,7 +313,7 @@ class ContenPage extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              SizedBox(height: 10,),
+                              const SizedBox(height: 10,),
                                Row(
                                 children: [
                                   Padding(
@@ -341,7 +342,7 @@ class ContenPage extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              SizedBox(height: 10,),
+                              const SizedBox(height: 10,),
                                Row(
                                 children: [
                                   Padding(
@@ -370,7 +371,7 @@ class ContenPage extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              SizedBox(height: 10,),
+                              const SizedBox(height: 10,),
                               
                             ],
                           ),
@@ -389,7 +390,7 @@ class ContenPage extends StatelessWidget {
             Container(
             height: 47,
             width: 430,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color.fromARGB(240, 197, 197, 194),
             ),
             child: Row(
@@ -398,7 +399,7 @@ class ContenPage extends StatelessWidget {
               children: <Widget>[
                 InkWell(
                   onTap: () {
-                    Get.to(()=> HomePage());
+                    Get.to(()=> const HomePage());
                   },
                   child: Container(
                     width: 45.87,
@@ -408,7 +409,7 @@ class ContenPage extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                  Get.to(()=> ContenPage());
+                  Get.to(()=> const GridDemo());
                   },
                   child: Container(
                     height: 40.89,
@@ -416,7 +417,7 @@ class ContenPage extends StatelessWidget {
                     child: Image.asset('assets/images/search.png'),
                   ),
                 ),
-                 SizedBox(width: 5,),
+                 const SizedBox(width: 5,),
 
                 InkWell(
                   // onTap: () {
@@ -432,7 +433,7 @@ class ContenPage extends StatelessWidget {
                     child: Center(child: Image.asset('assets/images/plus.png')),
                   ),
                 ),
-                SizedBox(width: 5,),
+                const SizedBox(width: 5,),
                 InkWell(
                   // onTap: () {
                   // Get.to(()=> HomePage());
@@ -445,7 +446,7 @@ class ContenPage extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                  Get.to(()=> AccountPage());
+                  Get.to(()=> const AccountPage());
                   },
                   child: Container(
                     width: 40,

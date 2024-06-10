@@ -4,6 +4,7 @@ import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import '../../Model/Model.dart';
 import 'exercisespage.dart';
 
+// ignore: must_be_immutable
 class DetilPage extends StatefulWidget {
   DetilPage({Key? key, this.exerciesModel}) : super(key: key);
 

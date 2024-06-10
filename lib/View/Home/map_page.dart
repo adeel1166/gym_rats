@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
 
 class CustomScreen extends StatefulWidget {
+  const CustomScreen({super.key});
+
   @override
   _CustomScreenState createState() => _CustomScreenState();
 }
@@ -17,7 +18,7 @@ class _CustomScreenState extends State<CustomScreen> {
   Widget build(BuildContext context) {
     // final height = MediaQuery.of(context).size.height;
         final width = MediaQuery.of(context).size.width;
-        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent, // Make status bar transparent
       statusBarIconBrightness: Brightness.light, // Use light icons for the status bar
     ));
@@ -38,7 +39,7 @@ class _CustomScreenState extends State<CustomScreen> {
                     children: [
                         InkWell(
                           onTap: () {
-                            Get.to(HomePage());
+                            Get.to(const HomePage());
                           },
                           child: SizedBox(
                             height: 35,
@@ -51,7 +52,7 @@ class _CustomScreenState extends State<CustomScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Container(
       height: 50,
       width: width,
@@ -80,10 +81,10 @@ class _CustomScreenState extends State<CustomScreen> {
             ),
             color: Color.fromRGBO(255, 0, 0, 0.56),
           ),
-          child: Center(
+          child: const Center(
             child: Text(
               "Nearby Gyms",
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
                 color: ColorsConfig.primaryColor, 
@@ -114,7 +115,7 @@ class _CustomScreenState extends State<CustomScreen> {
                   height:304 ,
                   width: 363,
                   decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/images/Frame 3867.png'),fit: BoxFit.fill),
+          image: const DecorationImage(image: AssetImage('assets/images/Frame 3867.png'),fit: BoxFit.fill),
           borderRadius: BorderRadius.circular(30)
                   ),
                 ),
@@ -126,7 +127,7 @@ class _CustomScreenState extends State<CustomScreen> {
                     Container(
                       width: 363,
                       height: 378.41,
-                      padding: EdgeInsets.only(top: 1),
+                      padding: const EdgeInsets.only(top: 1),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         border: Border.all(
@@ -141,7 +142,7 @@ class _CustomScreenState extends State<CustomScreen> {
                           return Container(
                             width: width,
                             height: 54.17,
-                            margin: EdgeInsets.symmetric(vertical: 7),
+                            margin: const EdgeInsets.symmetric(vertical: 7),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50 ),
                               color: Colors.grey[300],
@@ -149,7 +150,7 @@ class _CustomScreenState extends State<CustomScreen> {
                             child: Center(
                               child: Text(
                                 'Item ${index + 1}',
-                                style: TextStyle(fontSize: 18),
+                                style: const TextStyle(fontSize: 18),
                               ),
                             ),
                           );
