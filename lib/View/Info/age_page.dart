@@ -43,8 +43,9 @@ class AgePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 85,),
-              Row(mainAxisAlignment: MainAxisAlignment.center,
+              const SizedBox(height: 85,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "How Old are you?",
@@ -56,8 +57,9 @@ class AgePage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 5,),
-              Row(mainAxisAlignment: MainAxisAlignment.center,
+              const SizedBox(height: 5,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "You can change it later",
@@ -69,21 +71,31 @@ class AgePage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 22,),
+              const SizedBox(height: 22,),
               Container(
                 height: 240,
                 child: NumberListWheel(
                   controller: ageController,
                 ),
               ),
-              SizedBox(height: 170,),
-              Row(mainAxisAlignment: MainAxisAlignment.center,
+              const SizedBox(height: 170,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
                     onTap: () {
-                      int age = int.parse(ageController.text);
-                      userInfoController.setAge(age);
-                      Get.to(() => HeightPage());
+                      if (ageController.text.isNotEmpty && int.tryParse(ageController.text) != null) {
+                        int age = int.parse(ageController.text);
+                        userInfoController.setAge(age);
+                        Get.to(() => HeightPage());
+                      } else {
+                        Get.snackbar(
+                          "Invalid Age",
+                          "Please enter a valid age.",
+                          backgroundColor: Colors.red,
+                          colorText: Colors.white,
+                        );
+                      }
                     },
                     child: Container(
                       height: 55.0,
@@ -124,4 +136,3 @@ class AgePage extends StatelessWidget {
     );
   }
 }
-

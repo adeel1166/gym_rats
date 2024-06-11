@@ -4,7 +4,7 @@ import 'package:gym_rats/Model/UserInfoController.dart';
 import 'package:gym_rats/View/Intro/ExploreScreen.dart';
 
 void main(){
-Get.put(UserInfoController()); // Register the controller here
+Get.put(UserInfoController());
   runApp(MyApp());}
 
 class MyApp extends StatelessWidget {

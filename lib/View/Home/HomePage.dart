@@ -7,7 +7,6 @@ import 'package:gym_rats/Model/chat_bot.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
 import 'package:gym_rats/View/Home/map_page.dart';
 import 'package:gym_rats/View/Info/gender_page.dart';
-import 'package:gym_rats/View/Meals/screens_nutrition/details.dart';
 import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

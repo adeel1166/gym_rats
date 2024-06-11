@@ -43,7 +43,7 @@ class WeightPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 85,),
+              const SizedBox(height: 85,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -56,7 +56,7 @@ class WeightPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 5,),
+              const SizedBox(height: 5,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -69,7 +69,7 @@ class WeightPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 22,),
+              const SizedBox(height: 22,),
               Container(
                 height: 240,
                 child: NumberListWheel(
@@ -78,14 +78,23 @@ class WeightPage extends StatelessWidget {
                   unit: 'kg',
                 ),
               ),
-              SizedBox(height: 170,),
+              const SizedBox(height: 170,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
                     onTap: () {
-                      int weight = double.parse(weightController.text).toInt();
-                      userInfoController.setWeight(weight);
-                      Get.to(() => ResultPage());
+                      if (weightController.text.isNotEmpty && double.tryParse(weightController.text) != null) {
+                        int weight = double.parse(weightController.text).toInt();
+                        userInfoController.setWeight(weight);
+                        Get.to(() => ResultPage());
+                      } else {
+                        Get.snackbar(
+                          "Invalid Weight",
+                          "Please enter a valid weight.",
+                          backgroundColor: Colors.red,
+                          colorText: Colors.white,
+                        );
+                      }
                     },
                     child: Container(
                       height: 55.0,

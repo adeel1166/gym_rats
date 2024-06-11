@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/Model/UserInfoController.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
+import 'package:gym_rats/View/Info/ResultPage.dart';
 
 class DetailsPage extends StatelessWidget {
   final UserInfoController userInfoController = Get.find();
@@ -24,7 +25,7 @@ class DetailsPage extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-                      Get.to(const HomePage());
+                      Get.to( ResultPage());
                     },
                     child: SizedBox(
                       height: 35,

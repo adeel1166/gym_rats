@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/Model/UserInfoController.dart';
+import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
+import 'package:gym_rats/View/Home/account_page.dart';
 import 'package:gym_rats/View/Info/Details_page.dart';
+import 'package:gym_rats/View/Info/weight_page.dart';
+import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 
 class ResultPage extends StatelessWidget {
   final UserInfoController userInfoController = Get.find();
@@ -30,7 +34,7 @@ class ResultPage extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-                      Get.to(const HomePage());
+                      Get.to(()=>WeightPage());
                     },
                     child: SizedBox(
                       height: 35,
@@ -159,7 +163,79 @@ class ResultPage extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
+                  Spacer(),
+                  Container(
+            height: 47,
+            width: 430,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(240, 197, 197, 194),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                InkWell(
+                  onTap: () {
+                    Get.to(()=> HomePage());
+                  },
+                  child: Container(
+                    width: 45.87,
+                    height: 35.66,
+                    child: Image.asset('assets/images/home.png'),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                  Get.to(()=> GridDemo());
+                  },
+                  child: Container(
+                    height: 40.89,
+                    width: 40,
+                    child: Image.asset('assets/images/search.png'),
+                  ),
+                ),
+                 SizedBox(width: 5,),
+
+                InkWell(
+                  onTap: () {
+                        Get.to(()=> NutritionPage());
+                        },
+                  child: Container(
+                    height: 35.66,
+                    width: 80.27,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: ColorsConfig.redColor
+                    ),
+                    child: Center(child: Image.asset('assets/images/plus.png')),
+                  ),
+                ),
+                SizedBox(width: 5,),
+                InkWell(
+                  // onTap: () {
+                  // Get.to(()=> HomePage());
+                  // },
+                  child: Container(
+                    width: 40,
+                    height: 40.89,
+                    child: Image.asset('assets/images/comment.png'),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                  Get.to(()=> AccountPage());
+                  },
+                  child: Container(
+                    width: 40,
+                    height: 40.89,
+                    child: Image.asset('assets/images/person.png'),
+                  ),
+                )
+
+              ],
+            ),
+          )
                 ],
               ),
             ),
