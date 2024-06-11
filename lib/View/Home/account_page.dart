@@ -5,6 +5,7 @@ import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Authentication/sign_in.dart';
 import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
+import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -422,9 +423,9 @@ class AccountPage extends StatelessWidget {
                      SizedBox(width: 5,),
             
                     InkWell(
-                      // onTap: () {
-                      // Get.to(()=> HomePage());
-                      // },
+                      onTap: () {
+                        Get.to(()=> NutritionPage());
+                        },
                       child: Container(
                         height: 35.66,
                         width: 80.27,

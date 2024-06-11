@@ -6,8 +6,9 @@ import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/Model/chat_bot.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
 import 'package:gym_rats/View/Home/map_page.dart';
-import 'package:gym_rats/View/Info/age_page.dart';
 import 'package:gym_rats/View/Info/gender_page.dart';
+import 'package:gym_rats/View/Meals/screens_nutrition/details.dart';
+import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -252,7 +253,7 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(2),
                                   child: InkWell(
                                     onTap: () {
-                                      
+                                      Get.to(()=>NutritionPage());
                                     },
                                     child: Container(
                                       padding: const EdgeInsets.only(top: 15,bottom: 5),
@@ -945,9 +946,9 @@ portrait shoot next week.""",
                        const SizedBox(width: 5,),
             
                       InkWell(
-                        // onTap: () {
-                        // Get.to(()=> MainScreen());
-                        // },
+                        onTap: () {
+                        Get.to(()=> NutritionPage());
+                        },
                         child: Container(
                           height: 35.66,
                           width: 80.27,

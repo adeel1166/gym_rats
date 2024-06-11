@@ -31,9 +31,9 @@ Container(
                  SizedBox(width: 5,),
 
                 InkWell(
-                  // onTap: () {
-                  // Get.to(()=> HomePage());
-                  // },
+                  onTap: () {
+                        Get.to(()=> NutritionPage());
+                        },
                   child: Container(
                     height: 35.66,
                     width: 80.27,
