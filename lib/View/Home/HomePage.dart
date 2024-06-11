@@ -7,6 +7,7 @@ import 'package:gym_rats/Model/chat_bot.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
 import 'package:gym_rats/View/Home/map_page.dart';
 import 'package:gym_rats/View/Info/age_page.dart';
+import 'package:gym_rats/View/Info/gender_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -341,7 +342,7 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(2),
                                   child: InkWell(
                                     onTap: () {
-                                      Get.to(()=>AgePage());
+                                      Get.to(()=>GenderPage());
                                     },
                                     child: Container(
                                       padding: const EdgeInsets.only(top: 10,bottom: 5),
