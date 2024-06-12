@@ -4,25 +4,18 @@ import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
 
-class CustomScreen extends StatefulWidget {
-  const CustomScreen({super.key});
-
-  @override
-  _CustomScreenState createState() => _CustomScreenState();
-}
-
-class _CustomScreenState extends State<CustomScreen> {
-
+class PersonelTrainer extends StatelessWidget {
+  const PersonelTrainer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // final height = MediaQuery.of(context).size.height;
+        // final height = MediaQuery.of(context).size.height;
         final width = MediaQuery.of(context).size.width;
-        SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+         SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent, 
       statusBarIconBrightness: Brightness.light, 
     ));
-    return Scaffold(
+    return  Scaffold(
       body: Stack(
         children: [
          Positioned.fill(child: Image.asset('assets/images/explore.png',fit: BoxFit.cover,)),
@@ -101,67 +94,9 @@ class _CustomScreenState extends State<CustomScreen> {
             )
           
           ),
+
           
-          Positioned.fill(
-            top: 158,
-            left: 24,
-            right: 24,
-            child: Column(
-              children: [
-                
-                Row(mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height:304 ,
-                  width: 363,
-                  decoration: BoxDecoration(
-          image: const DecorationImage(image: AssetImage('assets/images/Frame 3867.png'),fit: BoxFit.fill),
-          borderRadius: BorderRadius.circular(30)
-                  ),
-                ),
-              ],
-            ),
-                Row(mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    
-                    Container(
-                      width: 363,
-                      height: 378.41,
-                      padding: const EdgeInsets.only(top: 1),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        border: Border.all(
-                          width: 1,
-                          color: Colors.transparent,
-                        ),
-                        color: Colors.white.withOpacity(0),
-                      ),
-                      child: ListView.builder(
-                        itemCount: 8,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            width: width,
-                            height: 54.17,
-                            margin: const EdgeInsets.symmetric(vertical: 7),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50 ),
-                              color: Colors.grey[300],
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Item ${index + 1}',
-                                style: const TextStyle(fontSize: 18),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+          
         ],
       ),
     );

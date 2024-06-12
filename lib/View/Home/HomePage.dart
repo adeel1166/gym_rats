@@ -5,6 +5,7 @@ import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/Model/chat_bot.dart';
 import 'package:gym_rats/View/Home/Bundle_Price_page.dart';
+import 'package:gym_rats/View/Home/Personel_Traine.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
 import 'package:gym_rats/View/Home/map_page.dart';
 import 'package:gym_rats/View/Info/gender_page.dart';
@@ -213,7 +214,8 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(2),
                                   child: InkWell(
                                     onTap: () {
-                                      
+                                    Get.to(()=>PersonelTrainer());
+
                                     },
                                     child: Container(
                                       padding: const EdgeInsets.only(top: 5,
