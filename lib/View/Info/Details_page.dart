@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/Model/UserInfoController.dart';
-import 'package:gym_rats/View/Home/HomePage.dart';
 import 'package:gym_rats/View/Info/ResultPage.dart';
 
 class DetailsPage extends StatelessWidget {

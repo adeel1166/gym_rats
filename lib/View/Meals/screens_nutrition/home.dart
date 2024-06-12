@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../constants.dart';
+import 'package:gym_rats/View/Home/HomePage.dart';
 import '../widgets/food_widget.dart';
 import 'details.dart';
 
@@ -328,79 +329,95 @@ class _NutritionPageState extends State<NutritionPage> {
     var size = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back),
-          color: Colors.black,
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Text(
-          'Nutrition Page',
-          style: TextStyle(color: Colors.grey[400]),
-        ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.symmetric(
-                vertical: 8.0,
-                horizontal: 20.0,
-              ),
-              child: Text(
-                'We think you might enjoy these specially selected dishes',
-                style: GoogleFonts.poppins(
-                  fontSize: size * 0.050,
-                  color: AppTheme.purpleText,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: size * 0.050,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Container(
-                width: double.infinity,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: foods.length,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailPage(
-                              food: foods[index],
-                              text: foods[index][3].toString(),
-                              img: foods[index][1].toString(),
-                              cal: foods[index][4].toString(),
-                              pro: foods[index][5].toString(),
-                              cals: foods[index][6].toString(),
-                            ),
-                          ),
-                        );
-                      },
-                      child: FoodWidget(
-                        size: size,
-                        foodName: foods[index][0].toString(),
-                        image: foods[index][1].toString(),
-                        star: double.parse(foods[index][2].toString()),
+      
+      body: Stack(
+        children: [
+          Positioned.fill(child: Image.asset('assets/images/explore.png',fit: BoxFit.cover,)),
+          Positioned(
+            top: 36,
+            left: 19,
+            child: 
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                  InkWell(
+                    onTap: () {
+                      Get.to(const HomePage());
+                    },
+                    child: SizedBox(
+                      height: 35,
+                      width: 35,
+                      child: Image.asset('assets/images/ep_back.png',fit: BoxFit.cover,),
+                    ),
+                  ),
+                  SizedBox(width: 30,),
+                  Text("Nutrition Page",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900,fontSize: 20),)
+
+              ],
+            )
+          
+          ),
+          Positioned.fill(
+            top: 100,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 8.0,
+                      horizontal: 20.0,
+                    ),
+                    child: Text(
+                      'We think you might enjoy these specially selected dishes',
+                      style: GoogleFonts.poppins(
+                        fontSize: size * 0.050,
+                        color: Colors.white,
                       ),
-                    );
-                  },
-                ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: size * 0.050,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Container(
+                      width: double.infinity,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemCount: foods.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DetailPage(
+                                    food: foods[index],
+                                    text: foods[index][3].toString(),
+                                    img: foods[index][1].toString(),
+                                    cal: foods[index][4].toString(),
+                                    pro: foods[index][5].toString(),
+                                    cals: foods[index][6].toString(),
+                                  ),
+                                ),
+                              );
+                            },
+                            child: FoodWidget(
+                              size: size,
+                              foodName: foods[index][0].toString(),
+                              image: foods[index][1].toString(),
+                              star: double.parse(foods[index][2].toString()),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
