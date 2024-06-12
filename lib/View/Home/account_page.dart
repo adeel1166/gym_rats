@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
+import 'package:gym_rats/View/Authentication/Edit_profile.dart';
 import 'package:gym_rats/View/Authentication/sign_in.dart';
 import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
@@ -236,27 +238,32 @@ class AccountPage extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                Container(padding: EdgeInsets.all(20),
-                                  height: 173,
-                                  width: 173,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Color.fromARGB(240, 72, 72, 72),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(height: 15,),
-                                      Image.asset('assets/images/UserMale.png'),
-                                      SizedBox(height: 50,),
-                                      Text("Edit Profile                >",
-                                      style: TextStyle(
-                                        fontSize: 11,
-                                        fontWeight: FontWeight.w700,
-                                        color: ColorsConfig.primaryColor
-                                      ),)
-                                    ],
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.to(()=>EditProfile());
+                                  },
+                                  child: Container(padding: EdgeInsets.all(20),
+                                    height: 173,
+                                    width: 173,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color.fromARGB(240, 72, 72, 72),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: 15,),
+                                        Image.asset('assets/images/UserMale.png'),
+                                        SizedBox(height: 50,),
+                                        Text("Edit Profile                >",
+                                        style: TextStyle(
+                                          fontSize: 11,
+                                          fontWeight: FontWeight.w700,
+                                          color: ColorsConfig.primaryColor
+                                        ),)
+                                      ],
+                                    ),
                                   ),
                                 )
                               ],
@@ -282,7 +289,7 @@ class AccountPage extends StatelessWidget {
                                       SizedBox(height: 15,),
                                       Image.asset('assets/images/CaloriesCalculator.png'),
                                       SizedBox(height: 50,),
-                                      Text("Diet                             >",
+                                      Text("Diet                            >",
                                       style: TextStyle(
                                         fontSize: 11,
                                         fontWeight: FontWeight.w700,
@@ -305,7 +312,7 @@ class AccountPage extends StatelessWidget {
                                       SizedBox(height: 15,),
                                       Image.asset('assets/images/Settings.png'),
                                       SizedBox(height: 50,),
-                                      Text("Setting                       >",
+                                      Text("Setting                      >",
                                       style: TextStyle(
                                         fontSize: 11,
                                         fontWeight: FontWeight.w700,
@@ -341,7 +348,7 @@ class AccountPage extends StatelessWidget {
                                         width: 50,
                                         child: Image.asset('assets/images/helpdesk.png')),
                                       SizedBox(height: 50,),
-                                      Text("Help                            >",
+                                      Text("Help                           >",
                                       style: TextStyle(
                                         fontSize: 11,
                                         fontWeight: FontWeight.w700,
@@ -367,7 +374,7 @@ class AccountPage extends StatelessWidget {
                                         width: 50,
                                         child: Image.asset('assets/images/exit.png')),
                                       SizedBox(height: 50,),
-                                      Text("Log Out               >",
+                                      Text("Log Out                    >",
                                       style: TextStyle(
                                         fontSize: 11,
                                         fontWeight: FontWeight.w700,

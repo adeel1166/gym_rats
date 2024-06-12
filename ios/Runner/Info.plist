@@ -11,6 +11,8 @@
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
+	<key>NSDocumentsFolderUsageDescription</key>
+    <string>We need access to the documents folder to save files.</string>
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>gym_rats</string>

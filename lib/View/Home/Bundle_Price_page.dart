@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
@@ -13,7 +11,7 @@ class BundlePrice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
+    // final height = MediaQuery.of(context).size.height;
         final width = MediaQuery.of(context).size.width;
     return  Scaffold(
       body: Stack(
@@ -101,9 +99,9 @@ class BundlePrice extends StatelessWidget {
             right: 0,
             child: Column(
               children: [
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
 
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
@@ -121,9 +119,9 @@ to get your ideal body goal""",
                     ),
                   ],
                 ),
-                SizedBox(height: 10,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30,right: 30),
+                const SizedBox(height: 10,),
+                const Padding(
+                  padding: EdgeInsets.only(left: 30,right: 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -142,7 +140,7 @@ to get your ideal body goal""",
                     ],
                   ),
                 ),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -155,9 +153,9 @@ to get your ideal body goal""",
                           color: Colors.white,
                         ),
                         borderRadius: BorderRadius.circular(30),
-                        color: Color.fromARGB(249, 71, 71, 70)
+                        color: const Color.fromARGB(249, 71, 71, 70)
                       ),
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -217,7 +215,7 @@ to get your ideal body goal""",
                     )
                   ],
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -230,9 +228,9 @@ to get your ideal body goal""",
                           color: Colors.white,
                         ),
                         borderRadius: BorderRadius.circular(30),
-                        color: Color.fromARGB(249, 71, 71, 70)
+                        color: const Color.fromARGB(249, 71, 71, 70)
                       ),
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -292,7 +290,7 @@ to get your ideal body goal""",
                     )
                   ],
                 ),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -332,11 +330,11 @@ to get your ideal body goal""",
                   ),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               Container(
             height: 47,
             width: 430,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color.fromARGB(240, 197, 197, 194),
             ),
             child: Row(
@@ -345,7 +343,7 @@ to get your ideal body goal""",
               children: <Widget>[
                 InkWell(
                   onTap: () {
-                    Get.to(()=> HomePage());
+                    Get.to(()=> const HomePage());
                   },
                   child: Container(
                     width: 45.87,
@@ -355,7 +353,7 @@ to get your ideal body goal""",
                 ),
                 InkWell(
                   onTap: () {
-                  Get.to(()=> GridDemo());
+                  Get.to(()=> const GridDemo());
                   },
                   child: Container(
                     height: 40.89,
@@ -363,11 +361,11 @@ to get your ideal body goal""",
                     child: Image.asset('assets/images/search.png'),
                   ),
                 ),
-                 SizedBox(width: 5,),
+                 const SizedBox(width: 5,),
 
                 InkWell(
                   onTap: () {
-                        Get.to(()=> NutritionPage());
+                        Get.to(()=> const NutritionPage());
                         },
                   child: Container(
                     height: 35.66,
@@ -379,7 +377,7 @@ to get your ideal body goal""",
                     child: Center(child: Image.asset('assets/images/plus.png')),
                   ),
                 ),
-                SizedBox(width: 5,),
+                const SizedBox(width: 5,),
                 InkWell(
                   // onTap: () {
                   // Get.to(()=> HomePage());
@@ -392,7 +390,7 @@ to get your ideal body goal""",
                 ),
                 InkWell(
                   onTap: () {
-                  Get.to(()=> AccountPage());
+                  Get.to(()=> const AccountPage());
                   },
                   child: Container(
                     width: 40,
