@@ -214,7 +214,7 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(2),
                                   child: InkWell(
                                     onTap: () {
-                                    Get.to(()=>PersonelTrainer());
+                                    Get.to(()=>TrainerList());
 
                                     },
                                     child: Container(
