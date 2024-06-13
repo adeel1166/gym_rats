@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
+import 'package:gym_rats/View/Home/Personel_Traine.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
 import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 
@@ -379,9 +380,9 @@ to get your ideal body goal""",
                 ),
                 const SizedBox(width: 5,),
                 InkWell(
-                  // onTap: () {
-                  // Get.to(()=> HomePage());
-                  // },
+                  onTap: () {
+                  Get.to(()=> TrainerList());
+                  },
                   child: Container(
                     width: 40,
                     height: 40.89,

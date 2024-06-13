@@ -5,7 +5,8 @@ import 'package:gym_rats/View/Intro/ExploreScreen.dart';
 
 void main(){
 Get.put(UserInfoController());
-  runApp(MyApp());}
+  runApp(MyApp());
+  }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

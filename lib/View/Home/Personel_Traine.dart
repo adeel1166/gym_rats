@@ -3,7 +3,10 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:gym_rats/Model/TrainerListModel.dart';
+import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
+import 'package:gym_rats/View/Home/account_page.dart';
+import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 
 class TrainerList extends StatelessWidget {
   // Sample list of trainers
@@ -205,6 +208,78 @@ class TrainerList extends StatelessWidget {
                              },
                    ),
                  ),
+                 Positioned(bottom: 0,child: 
+                 Container(
+            height: 47,
+            width: 430,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(240, 197, 197, 194),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                InkWell(
+                  onTap: () {
+                    Get.to(()=> HomePage());
+                  },
+                  child: Container(
+                    width: 45.87,
+                    height: 35.66,
+                    child: Image.asset('assets/images/home.png'),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                  Get.to(()=> GridDemo());
+                  },
+                  child: Container(
+                    height: 40.89,
+                    width: 40,
+                    child: Image.asset('assets/images/search.png'),
+                  ),
+                ),
+                 SizedBox(width: 5,),
+
+                InkWell(
+                  onTap: () {
+                        Get.to(()=> NutritionPage());
+                        },
+                  child: Container(
+                    height: 35.66,
+                    width: 80.27,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: Colors.red
+                    ),
+                    child: Center(child: Image.asset('assets/images/plus.png')),
+                  ),
+                ),
+                SizedBox(width: 5,),
+                InkWell(
+                  onTap: () {
+                  Get.to(()=> TrainerList());
+                  },
+                  child: Container(
+                    width: 40,
+                    height: 40.89,
+                    child: Image.asset('assets/images/comment.png'),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                  Get.to(()=> AccountPage());
+                  },
+                  child: Container(
+                    width: 40,
+                    height: 40.89,
+                    child: Image.asset('assets/images/person.png'),
+                  ),
+                )
+
+              ],
+            ),
+          ))
                ],
        ),
     );

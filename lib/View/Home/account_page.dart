@@ -7,6 +7,7 @@ import 'package:gym_rats/View/Authentication/Edit_profile.dart';
 import 'package:gym_rats/View/Authentication/sign_in.dart';
 import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
+import 'package:gym_rats/View/Home/Personel_Traine.dart';
 import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 
 class AccountPage extends StatelessWidget {
@@ -445,9 +446,9 @@ class AccountPage extends StatelessWidget {
                     ),
                     SizedBox(width: 5,),
                     InkWell(
-                      // onTap: () {
-                      // Get.to(()=> HomePage());
-                      // },
+                      onTap: () {
+                      Get.to(()=> TrainerList());
+                      },
                       child: Container(
                         width: 40,
                         height: 40.89,

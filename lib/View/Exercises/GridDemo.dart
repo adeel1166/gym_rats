@@ -1,6 +1,10 @@
 import 'dart:convert';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:gym_rats/View/Home/HomePage.dart';
 import 'package:http/http.dart' as http;
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'DetailPage.dart';
@@ -79,95 +83,116 @@ class _GridDemoState extends State<GridDemo> {
       inAsyncCall: isLoading,
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.arrow_back),
-            color: Colors.black,
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.white,
-          elevation: 0,
-          title: Text(
-            'Exercises Page',
-            style: TextStyle(color: Colors.grey[400]),
-          ),
-        ),
-        body: Container(
-            child: GridView.builder(
-          itemCount: allData.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 1,
-            mainAxisSpacing: 1,
-          ),
-          itemBuilder: (BuildContext context, int index) {
-            return InkWell(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => DetilPage(
-                          exerciesModel: allData[index],
-                        )));
-
-              },
-              child: CachedNetworkImage(
-                imageUrl: "${allData[index].gif}",
-                // fit: BoxFit.cover,
-                //       width: double.infinity,
-                imageBuilder: (context, imageProvider) => Container(
-                  margin: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
-                  height: 150,
-                  width: double.infinity,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Stack(
-                      children: [
-                        Image(image: imageProvider,
-                        fit: BoxFit.cover,
-                          width: double.infinity,
+       
+        body: Stack(
+          children: [
+                     Positioned.fill(child: Image.asset('assets/images/explore.png',fit: BoxFit.cover,)),
+                     Positioned(
+                      top: 36,
+                      child: Padding(
+                  padding: const EdgeInsets.only(left: 23),
+                  child: Row(mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                        InkWell(
+                          onTap: () {
+                            Get.to(const HomePage());
+                          },
+                          child: SizedBox(
+                            height: 35,
+                            width: 35,
+                            child: Image.asset('assets/images/ep_back.png',fit: BoxFit.cover,),
+                          ),
                         ),
-                        // Image.network(
-                        //   "${allData[index].gif}",
-                        //   fit: BoxFit.cover,
-                        //   width: double.infinity,
-                        // ),
-                        Positioned(
-                            bottom: 0,
-                            left: 0,
-                            right: 0,
-                            child: Container(
-                              padding: EdgeInsets.all(16),
-                              height: 80,
-                              alignment: Alignment.bottomLeft,
-                              child: Text(
-                                "${allData[index].title}",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w800),
-                              ),
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                    Colors.black12,
-                                    Colors.black54,
-                                    Colors.black87,
-                                    Colors.black
-                                  ])),
-                            ))
-                      ],
-                    ),
+                        SizedBox(width: 30,),
+                        Text(
+            'Exercises Page',
+            style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w700),
+          ),
+                        
+                  
+                    ],
                   ),
                 ),
-              ),
-            );
-          },
-        )),
+                     ),
+
+            Positioned.fill(
+              top: 75,
+              child: Container(
+                  child: GridView.builder(
+                itemCount: allData.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 1,
+                  mainAxisSpacing: 1,
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DetilPage(
+                                exerciesModel: allData[index],
+                              )));
+              
+                    },
+                    child: CachedNetworkImage(
+                      imageUrl: "${allData[index].gif}",
+                      // fit: BoxFit.cover,
+                      //       width: double.infinity,
+                      imageBuilder: (context, imageProvider) => Container(
+                        margin: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+                        height: 150,
+                        width: double.infinity,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Stack(
+                            children: [
+                              Image(image: imageProvider,
+                              fit: BoxFit.cover,
+                                width: double.infinity,
+                              ),
+                              // Image.network(
+                              //   "${allData[index].gif}",
+                              //   fit: BoxFit.cover,
+                              //   width: double.infinity,
+                              // ),
+                              Positioned(
+                                  bottom: 0,
+                                  left: 0,
+                                  right: 0,
+                                  child: Container(
+                                    padding: EdgeInsets.all(16),
+                                    height: 80,
+                                    alignment: Alignment.bottomLeft,
+                                    child: Text(
+                                      "${allData[index].title}",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w800),
+                                    ),
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                        gradient: LinearGradient(
+                                            begin: Alignment.topCenter,
+                                            end: Alignment.bottomCenter,
+                                            colors: [
+                                          Colors.black12,
+                                          Colors.black54,
+                                          Colors.black87,
+                                          Colors.black
+                                        ])),
+                                  ))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              )),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
+import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
+import 'package:gym_rats/View/Home/Personel_Traine.dart';
+import 'package:gym_rats/View/Home/account_page.dart';
+import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 
 class CustomScreen extends StatefulWidget {
   const CustomScreen({super.key});
@@ -145,12 +149,12 @@ class _CustomScreenState extends State<CustomScreen> {
                             margin: const EdgeInsets.symmetric(vertical: 7),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50 ),
-                              color: Colors.grey[300],
+                              color: Color.fromARGB(200, 58, 58, 58),
                             ),
                             child: Center(
                               child: Text(
                                 'Item ${index + 1}',
-                                style: const TextStyle(fontSize: 18),
+                                style: const TextStyle(fontSize: 18,color: Colors.white),
                               ),
                             ),
                           );
@@ -162,6 +166,78 @@ class _CustomScreenState extends State<CustomScreen> {
               ],
             ),
           ),
+          Positioned(bottom: 0,child: 
+          Container(
+            height: 47,
+            width: 430,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(240, 197, 197, 194),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                InkWell(
+                  onTap: () {
+                    Get.to(()=> HomePage());
+                  },
+                  child: Container(
+                    width: 45.87,
+                    height: 35.66,
+                    child: Image.asset('assets/images/home.png'),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                  Get.to(()=> GridDemo());
+                  },
+                  child: Container(
+                    height: 40.89,
+                    width: 40,
+                    child: Image.asset('assets/images/search.png'),
+                  ),
+                ),
+                 SizedBox(width: 5,),
+
+                InkWell(
+                  onTap: () {
+                        Get.to(()=> NutritionPage());
+                        },
+                  child: Container(
+                    height: 35.66,
+                    width: 80.27,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: ColorsConfig.redColor
+                    ),
+                    child: Center(child: Image.asset('assets/images/plus.png')),
+                  ),
+                ),
+                SizedBox(width: 5,),
+                InkWell(
+                  onTap: () {
+                  Get.to(()=> TrainerList());
+                  },
+                  child: Container(
+                    width: 40,
+                    height: 40.89,
+                    child: Image.asset('assets/images/comment.png'),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                  Get.to(()=> AccountPage());
+                  },
+                  child: Container(
+                    width: 40,
+                    height: 40.89,
+                    child: Image.asset('assets/images/person.png'),
+                  ),
+                )
+
+              ],
+            ),
+          ))
         ],
       ),
     );
