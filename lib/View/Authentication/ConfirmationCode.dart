@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
-import 'package:gym_rats/View/Authentication/ConfirmationCode.dart';
-import 'package:gym_rats/View/Authentication/sign_in.dart';
+import 'package:gym_rats/View/Authentication/ForgotPassword.dart';
 
-class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({super.key});
+class ConfirmationCode extends StatelessWidget {
+  const ConfirmationCode({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class ForgotPassword extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 23),
                 child: InkWell(
                   onTap: () {
-                    Get.to(SignIn());
+                    Get.to(ForgotPassword());
                   },
                   child: SizedBox(
                     height: 35,
@@ -48,7 +48,7 @@ class ForgotPassword extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Forgot Password",
+                    "Confirmation",
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
@@ -57,18 +57,35 @@ class ForgotPassword extends StatelessWidget {
                   )
                 ],
               ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Code sent.",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: Color.fromARGB(255, 196, 195, 195),
+                    ),
+                  )
+                ],
+              ),
               const SizedBox(height: 200),
               const Padding(
-                padding: EdgeInsets.only(left: 47),
+                padding: EdgeInsets.only(left: 47,right: 150),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      "Email",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: ColorsConfig.primaryColor,
+                    Expanded(
+                      child: Text(
+                        "Enter the code sent to your email below to reset your password .",
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.grey,
+                        ),
+                        maxLines: 2,
+                        textAlign: TextAlign.left,
                       ),
                     )
                   ],
@@ -91,7 +108,7 @@ class ForgotPassword extends StatelessWidget {
                       decoration: const InputDecoration(
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.only(top: 30),
-                        hintText: "Email address",
+                        hintText: "Enter Code",
                         hintStyle: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
@@ -110,27 +127,66 @@ class ForgotPassword extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
-                      child: Text("Enter the email address or phonenumber linked to your account.",
+                      child: Text("code was sent to your email",
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
                         color: Colors.grey,
                                     
                       ),
-                      maxLines: 2,
+                      maxLines: 1,
                       textAlign: TextAlign.center,),
                     )
                   ],
                 ),
               ),
-              SizedBox(height: 70,),
+               Padding(
+                padding: const EdgeInsets.only(left: 35,right: 35),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Text(" mohsen1234@gmail.com",
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                                    
+                      ),
+                      maxLines: 1,
+                      textAlign: TextAlign.center,),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 60,),
+               Padding(
+                padding: const EdgeInsets.only(left: 35,right: 35),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Text("This code expires in 5 Minutes",
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.red,
+                                    
+                      ),
+                      maxLines: 1,
+                      textAlign: TextAlign.center,),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 30,),
               
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Get.to(()=>ConfirmationCode());
+                      
                     },
                     child: Container(
                       height: 55.0,
@@ -151,7 +207,7 @@ class ForgotPassword extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Send",
+                            "Verify code",
                             style: TextStyle(
                               fontSize: 21,
                               fontWeight: FontWeight.w700,
@@ -170,7 +226,7 @@ class ForgotPassword extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Forget your Email or number?",
+                    "Didn’t receive email ?",
                     style: TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
@@ -182,7 +238,7 @@ class ForgotPassword extends StatelessWidget {
                     onTap: () {
                     },
                     child: const Text(
-                      "Support Center",
+                      "Resend",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
