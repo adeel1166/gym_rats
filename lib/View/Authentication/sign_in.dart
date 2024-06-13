@@ -1,7 +1,7 @@
-// SignIn Screen
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
+import 'package:gym_rats/View/Authentication/ForgotPassword.dart';
 import 'package:gym_rats/View/Authentication/signup.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
 import 'package:gym_rats/View/Intro/getstarted.dart';
@@ -199,7 +199,7 @@ class _SignInState extends State<SignIn> {
                         ),
                         TextButton(
                           onPressed: () {
-                            // Handle forgot password action
+                            Get.to(()=>ForgotPassword());
                           },
                           child: const Text(
                             "Forgot Password?",

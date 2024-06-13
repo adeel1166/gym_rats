@@ -14,7 +14,6 @@ class SignUp extends StatelessWidget {
 
     
 
-    final _formKey = GlobalKey<FormState>();
     final _usernameController = TextEditingController();
     final _emailController = TextEditingController();
     final _passwordController = TextEditingController();
