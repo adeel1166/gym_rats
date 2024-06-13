@@ -329,14 +329,14 @@ class _SignInState extends State<SignIn> {
                   ),
                 ],
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
                     "Don’t have an account yet?",
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: 13,
                       fontWeight: FontWeight.w400,
                       color: ColorsConfig.primaryColor,
                     ),
@@ -349,7 +349,7 @@ class _SignInState extends State<SignIn> {
                     child: const Text(
                       "Sign up",
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 16,
                         fontWeight: FontWeight.w400,
                         color: ColorsConfig.primaryColor,
                         decoration: TextDecoration.underline,
