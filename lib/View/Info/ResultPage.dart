@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gym_rats/Common/colors.dart';
-import 'package:gym_rats/Model/UserInfoController.dart';
 import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
 import 'package:gym_rats/View/Home/Personel_Traine.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
-import 'package:gym_rats/View/Info/Details_page.dart';
+import 'package:gym_rats/View/Info/Details.dart';
+import 'package:gym_rats/Model/UserInfoController.dart';
 import 'package:gym_rats/View/Info/weight_page.dart';
 import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 
@@ -16,10 +15,7 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double bmi = userInfoController.calculateBMI();
-
-    // Map BMI to a percentage for the circular progress indicator
-    double bmiPercentage = (bmi / 100).clamp(0.0, 1.0);
-    final width = MediaQuery.of(context).size.width;
+    String bmiComment = _getBMIComment(bmi); // Calculate BMI comment
 
     return Scaffold(
       body: Center(
@@ -54,7 +50,7 @@ class ResultPage extends StatelessWidget {
                   SizedBox(height: 78),
                   Container(
                     height: 50,
-                    width: width,
+                    width: MediaQuery.of(context).size.width,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(40),
@@ -62,7 +58,7 @@ class ResultPage extends StatelessWidget {
                       ),
                       border: Border(
                         top: BorderSide(
-                          color: ColorsConfig.redColor,
+                          color: Colors.red,
                           width: 5,
                         ),
                       ),
@@ -82,11 +78,11 @@ class ResultPage extends StatelessWidget {
                         ),
                         child: const Center(
                           child: Text(
-                            "Nearby Gyms",
+                            "BMI Result",
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w700,
-                              color: ColorsConfig.primaryColor,
+                              color: Colors.white,
                             ),
                           ),
                         ),
@@ -98,14 +94,14 @@ class ResultPage extends StatelessWidget {
                     width: 218,
                     height: 218,
                     child: CustomPaint(
-                      painter: BMICirclePainter(bmiPercentage),
+                      painter: BMICirclePainter(_getBMIPercentage(bmi)),
                       child: Center(
                         child: Text(
                           bmi.toStringAsFixed(1),
                           style: TextStyle(
                             fontSize: 36,
                             fontWeight: FontWeight.bold,
-                            color: ColorsConfig.primaryColor,
+                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -116,11 +112,11 @@ class ResultPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "You have Obese body weight!",
+                        "You have $bmiComment body weight!",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
-                          color: ColorsConfig.primaryColor,
+                          color: Colors.white,
                         ),
                       ),
                     ],
@@ -131,7 +127,7 @@ class ResultPage extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Get.to(() => DetailsPage());
+                          Get.to(() => DetailsPage(bmi: bmi, bmiComment: bmiComment));
                         },
                         child: Container(
                           height: 55.0,
@@ -156,7 +152,7 @@ class ResultPage extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 21,
                                   fontWeight: FontWeight.w700,
-                                  color: ColorsConfig.primaryColor,
+                                  color: Colors.white,
                                 ),
                               ),
                             ],
@@ -167,76 +163,74 @@ class ResultPage extends StatelessWidget {
                   ),
                   Spacer(),
                   Container(
-            height: 47,
-            width: 430,
-            decoration: BoxDecoration(
-              color: Color.fromARGB(240, 197, 197, 194),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                InkWell(
-                  onTap: () {
-                    Get.to(()=> HomePage());
-                  },
-                  child: Container(
-                    width: 45.87,
-                    height: 35.66,
-                    child: Image.asset('assets/images/home.png'),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                  Get.to(()=> GridDemo());
-                  },
-                  child: Container(
-                    height: 40.89,
-                    width: 40,
-                    child: Image.asset('assets/images/search.png'),
-                  ),
-                ),
-                 SizedBox(width: 5,),
-
-                InkWell(
-                  onTap: () {
-                        Get.to(()=> NutritionPage());
-                        },
-                  child: Container(
-                    height: 35.66,
-                    width: 80.27,
+                    height: 47,
+                    width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: ColorsConfig.redColor
+                      color: Color.fromARGB(240, 197, 197, 194),
                     ),
-                    child: Center(child: Image.asset('assets/images/plus.png')),
-                  ),
-                ),
-                SizedBox(width: 5,),
-                InkWell(
-                  onTap: () {
-                  Get.to(()=> TrainerList());
-                  },
-                  child: Container(
-                    width: 40,
-                    height: 40.89,
-                    child: Image.asset('assets/images/comment.png'),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                  Get.to(()=> AccountPage());
-                  },
-                  child: Container(
-                    width: 40,
-                    height: 40.89,
-                    child: Image.asset('assets/images/person.png'),
-                  ),
-                )
-
-              ],
-            ),
-          )
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => HomePage());
+                          },
+                          child: Container(
+                            width: 45.87,
+                            height: 35.66,
+                            child: Image.asset('assets/images/home.png'),
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => GridDemo());
+                          },
+                          child: Container(
+                            height: 40.89,
+                            width: 40,
+                            child: Image.asset('assets/images/search.png'),
+                          ),
+                        ),
+                        SizedBox(width: 5,),
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => NutritionPage());
+                          },
+                          child: Container(
+                            height: 35.66,
+                            width: 80.27,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.red,
+                            ),
+                            child: Center(child: Image.asset('assets/images/plus.png')),
+                          ),
+                        ),
+                        SizedBox(width: 5,),
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => TrainerList());
+                          },
+                          child: Container(
+                            width: 40,
+                            height: 40.89,
+                            child: Image.asset('assets/images/comment.png'),
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => AccountPage());
+                          },
+                          child: Container(
+                            width: 40,
+                            height: 40.89,
+                            child: Image.asset('assets/images/person.png'),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
@@ -244,6 +238,22 @@ class ResultPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _getBMIComment(double bmi) {
+    if (bmi < 18.5) {
+      return 'Underweight';
+    } else if (bmi < 25) {
+      return 'Healthy';
+    } else if (bmi < 30) {
+      return 'Overweight';
+    } else {
+      return 'Obese';
+    }
+  }
+
+  double _getBMIPercentage(double bmi) {
+    return (bmi / 100).clamp(0.0, 1.0);
   }
 }
 
