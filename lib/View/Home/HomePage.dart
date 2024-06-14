@@ -12,6 +12,7 @@ import 'package:gym_rats/View/Home/account_page.dart';
 import 'package:gym_rats/View/Home/map_page.dart';
 import 'package:gym_rats/View/Info/gender_page.dart';
 import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
+import 'package:intl/intl.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -46,6 +47,10 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
+      DateTime now = DateTime.now();
+    String formattedDate = DateFormat('dd MMMM yyyy').format(now);
+    String formattedTime = DateFormat('hh:mm a').format(now);
+
     // final height = MediaQuery.of(context).size.height;
         final width = MediaQuery.of(context).size.width;
 
@@ -143,19 +148,16 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     const SizedBox(height: 170,),
+
                     
                     
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("Monday, 13 May 2024",
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w700,
-                          color: ColorsConfig.primaryColor
-                        ),)
-                      ],
-                    ),
+                    
+                    Row(mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                          Text('$formattedTime,$formattedDate',
+          style: TextStyle(fontSize: 20,color: Colors.white),
+          )
+                    ],),
                     Center(
                       child: Container(
                             height: 50,
