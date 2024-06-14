@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -8,10 +9,14 @@ import 'package:gym_rats/View/Authentication/sign_in.dart';
 import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
 import 'package:gym_rats/View/Home/Personel_Traine.dart';
+import 'package:gym_rats/View/Intro/ExploreScreen.dart';
 import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
+  void _logout() {
+    Get.offAll(() => const Explore()); 
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +24,8 @@ class AccountPage extends StatelessWidget {
         final width = MediaQuery.of(context).size.width;
 
         SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent, // Make status bar transparent
-      statusBarIconBrightness: Brightness.light, // Use light icons for the status bar
+      statusBarColor: Colors.transparent, 
+      statusBarIconBrightness: Brightness.light, 
     ));
     
     return  Scaffold(
@@ -276,27 +281,32 @@ class AccountPage extends StatelessWidget {
                             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 SizedBox(height: 7,),
-                                Container(padding: EdgeInsets.all(20),
-                                  height: 173,
-                                  width: 173,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Color.fromARGB(240, 72, 72, 72),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(height: 15,),
-                                      Image.asset('assets/images/CaloriesCalculator.png'),
-                                      SizedBox(height: 50,),
-                                      Text("Diet                            >",
-                                      style: TextStyle(
-                                        fontSize: 11,
-                                        fontWeight: FontWeight.w700,
-                                        color: ColorsConfig.primaryColor
-                                      ),)
-                                    ],
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.to(()=>NutritionPage());
+                                  },
+                                  child: Container(padding: EdgeInsets.all(20),
+                                    height: 173,
+                                    width: 173,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color.fromARGB(240, 72, 72, 72),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: 15,),
+                                        Image.asset('assets/images/CaloriesCalculator.png'),
+                                        SizedBox(height: 50,),
+                                        Text("Diet                            >",
+                                        style: TextStyle(
+                                          fontSize: 11,
+                                          fontWeight: FontWeight.w700,
+                                          color: ColorsConfig.primaryColor
+                                        ),)
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 Container(padding: EdgeInsets.all(20),
@@ -358,30 +368,35 @@ class AccountPage extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                Container(padding: EdgeInsets.all(20),
-                                  height: 173,
-                                  width: 173,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Color.fromARGB(240, 72, 72, 72),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(height: 15,),
-                                      Container(
-                                        height: 50,
-                                        width: 50,
-                                        child: Image.asset('assets/images/exit.png')),
-                                      SizedBox(height: 50,),
-                                      Text("Log Out                    >",
-                                      style: TextStyle(
-                                        fontSize: 11,
-                                        fontWeight: FontWeight.w700,
-                                        color: ColorsConfig.primaryColor
-                                      ),)
-                                    ],
+                                GestureDetector(
+                                  onTap: () {
+                                  Get.offAll(() => const Explore()); 
+                                  },
+                                  child: Container(padding: EdgeInsets.all(20),
+                                    height: 173,
+                                    width: 173,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color.fromARGB(240, 72, 72, 72),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: 15,),
+                                        Container(
+                                          height: 50,
+                                          width: 50,
+                                          child: Image.asset('assets/images/exit.png')),
+                                        SizedBox(height: 50,),
+                                        Text("Log Out                    >",
+                                        style: TextStyle(
+                                          fontSize: 11,
+                                          fontWeight: FontWeight.w700,
+                                          color: ColorsConfig.primaryColor
+                                        ),)
+                                      ],
+                                    ),
                                   ),
                                 )
                               ],

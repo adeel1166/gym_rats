@@ -239,7 +239,7 @@ class Suplements extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      
+                      Get.to(()=>NutritionPage());
                     },
                     child: Container(
                       padding: EdgeInsets.only(left: 20,right: 20,bottom: 10),
