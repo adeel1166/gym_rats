@@ -1,23 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:gym_rats/Common/colors.dart';
-import 'package:gym_rats/View/Authentication/sign_in.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:gym_rats/Common/colors.dart';
+import 'package:flutter/services.dart';
 
 class HelpandSuport extends StatelessWidget {
   const HelpandSuport({super.key});
 
-  static const platform = MethodChannel('com.example.your_app_name/url_launcher');
+  static const platform = MethodChannel('com.example.gym_rats/channel');
 
-  Future<void> _launchURL(String url) async {
-  if (await canLaunchUrl(Uri.parse(url))) {
-    await launchUrl(Uri.parse(url));
-  } else {
-    debugPrint("Failed to launch URL: '$url'.");
+  Future<void> _openWhatsApp() async {
+    try {
+      await platform.invokeMethod('openWhatsApp');
+    } on PlatformException catch (e) {
+      debugPrint("Failed to open WhatsApp: '${e.message}'.");
+    }
   }
-}
+
+  Future<void> _openGmail() async {
+    try {
+      await platform.invokeMethod('openGmail');
+    } on PlatformException catch (e) {
+      debugPrint("Failed to open Gmail: '${e.message}'.");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +75,7 @@ class HelpandSuport extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               Padding(
-                padding: const EdgeInsets.only(left: 45, right: 45),
+                padding: const EdgeInsets.symmetric(horizontal: 45),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -94,7 +100,7 @@ How can I help you?""",
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
-                     onTap: () => _launchURL('https://wa.link/mopf87'),
+                    onTap: _openWhatsApp,
                     child: Container(
                       height: 58.0,
                       width: 260.0,
@@ -126,7 +132,7 @@ How can I help you?""",
               ),
               const SizedBox(height: 15),
               Padding(
-                padding: const EdgeInsets.only(left: 35, right: 35),
+                padding: const EdgeInsets.symmetric(horizontal: 35),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -146,7 +152,7 @@ How can I help you?""",
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 35, right: 35),
+                padding: const EdgeInsets.symmetric(horizontal: 35),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -161,7 +167,7 @@ How can I help you?""",
                       textAlign: TextAlign.center,
                     ),
                     GestureDetector(
-                      onTap: () => _launchURL('mailto:mahfujur@gmail.com'),
+                      onTap: _openGmail,
                       child: Text(
                         "mahfujur@gmail.com",
                         style: TextStyle(
