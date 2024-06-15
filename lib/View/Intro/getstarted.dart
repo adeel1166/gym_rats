@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Authentication/sign_in.dart';
 import 'package:gym_rats/View/Authentication/signup.dart';
+import 'package:gym_rats/View/Home/HomePage.dart';
 import 'package:gym_rats/View/Intro/infopage1.dart';
 
 class getstarted extends StatelessWidget {
@@ -113,7 +114,7 @@ class getstarted extends StatelessWidget {
         
                 ],
               ),
-              const SizedBox(height: 290,),
+              const SizedBox(height: 230,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
@@ -152,7 +153,7 @@ class getstarted extends StatelessWidget {
                       
                 ],
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 20,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         InkWell(
@@ -165,7 +166,16 @@ class getstarted extends StatelessWidget {
                             color: ColorsConfig.primaryColor
                           ),),
                         )
-                      ],)
+                      ],),
+                      SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(onPressed: (){
+                    Get.to(()=>HomePage());
+                  }, child: Text("Skip",style: TextStyle(color: const Color.fromARGB(255, 194, 191, 191),fontSize: 22,fontWeight: FontWeight.w300),))
+                ],
+              )
             ],
             
           ),

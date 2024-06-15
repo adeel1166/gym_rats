@@ -9,7 +9,6 @@ import 'package:gym_rats/View/Home/account_page.dart';
 import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 
 class TrainerList extends StatelessWidget {
-  // Sample list of trainers
   final List<Trainer> trainers = [
     Trainer(
       name: "Shieno",
@@ -23,7 +22,106 @@ class TrainerList extends StatelessWidget {
       imagePath: 'assets/images/Ellipse2.png',
       isActive: false,
     ),
-    // Add more trainers here
+    Trainer(
+      name: "Shieno",
+      message: "Wanted to ask if you’re available for a portrait shoot next week.",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: true,
+    ),
+    Trainer(
+      name: "John Doe",
+      message: "Are you coming to the gym tomorrow?",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: false,
+    ),Trainer(
+      name: "Shieno",
+      message: "Wanted to ask if you’re available for a portrait shoot next week.",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: true,
+    ),
+    Trainer(
+      name: "John Doe",
+      message: "Are you coming to the gym tomorrow?",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: false,
+    ),Trainer(
+      name: "Shieno",
+      message: "Wanted to ask if you’re available for a portrait shoot next week.",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: true,
+    ),
+    Trainer(
+      name: "John Doe",
+      message: "Are you coming to the gym tomorrow?",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: false,
+    ),Trainer(
+      name: "Shieno",
+      message: "Wanted to ask if you’re available for a portrait shoot next week.",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: true,
+    ),
+    Trainer(
+      name: "John Doe",
+      message: "Are you coming to the gym tomorrow?",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: false,
+    ),Trainer(
+      name: "Shieno",
+      message: "Wanted to ask if you’re available for a portrait shoot next week.",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: true,
+    ),
+    Trainer(
+      name: "John Doe",
+      message: "Are you coming to the gym tomorrow?",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: false,
+    ),Trainer(
+      name: "Shieno",
+      message: "Wanted to ask if you’re available for a portrait shoot next week.",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: true,
+    ),
+    Trainer(
+      name: "John Doe",
+      message: "Are you coming to the gym tomorrow?",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: false,
+    ),Trainer(
+      name: "Shieno",
+      message: "Wanted to ask if you’re available for a portrait shoot next week.",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: true,
+    ),
+    Trainer(
+      name: "John Doe",
+      message: "Are you coming to the gym tomorrow?",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: false,
+    ),Trainer(
+      name: "Shieno",
+      message: "Wanted to ask if you’re available for a portrait shoot next week.",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: true,
+    ),
+    Trainer(
+      name: "John Doe",
+      message: "Are you coming to the gym tomorrow?",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: false,
+    ),Trainer(
+      name: "Shieno",
+      message: "Wanted to ask if you’re available for a portrait shoot next week.",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: true,
+    ),
+    Trainer(
+      name: "John Doe",
+      message: "Are you coming to the gym tomorrow?",
+      imagePath: 'assets/images/Ellipse2.png',
+      isActive: false,
+    ),
   ];
 
   @override

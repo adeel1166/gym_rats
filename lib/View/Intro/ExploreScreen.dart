@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:gym_rats/Common/colors.dart';
+import 'package:gym_rats/View/Home/HomePage.dart';
 import 'package:gym_rats/View/Intro/infopage1.dart';
 
 class Explore extends StatelessWidget {
@@ -97,7 +98,7 @@ class Explore extends StatelessWidget {
         
                 ],
               ),
-              const SizedBox(height: 315,),
+              const SizedBox(height: 285,),
               InkWell(
                 onTap: (){Get.to(infopage1());},
                 child: Container(
@@ -120,6 +121,7 @@ class Explore extends StatelessWidget {
                   ),
                 ),
               ),
+              
               
             ],
             

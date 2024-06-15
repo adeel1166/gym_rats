@@ -7,8 +7,10 @@ import 'package:gym_rats/Common/colors.dart';
 import 'package:gym_rats/View/Authentication/Edit_profile.dart';
 import 'package:gym_rats/View/Authentication/sign_in.dart';
 import 'package:gym_rats/View/Exercises/GridDemo.dart';
+import 'package:gym_rats/View/Home/Bundle_Price_page.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
 import 'package:gym_rats/View/Home/Personel_Traine.dart';
+import 'package:gym_rats/View/Home/helpandsuport.dart';
 import 'package:gym_rats/View/Intro/ExploreScreen.dart';
 import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 
@@ -221,27 +223,32 @@ class AccountPage extends StatelessWidget {
                             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 SizedBox(height: 7,),
-                                Container(padding: EdgeInsets.all(20),
-                                  height: 173,
-                                  width: 173,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Color.fromARGB(240, 72, 72, 72),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(height: 15,),
-                                      Image.asset('assets/images/Crown.png'),
-                                      SizedBox(height: 50,),
-                                      Text("Membership              >",
-                                      style: TextStyle(
-                                        fontSize: 11,
-                                        fontWeight: FontWeight.w700,
-                                        color: ColorsConfig.primaryColor
-                                      ),)
-                                    ],
+                                InkWell(
+                                  onTap: () {
+                                    Get.to(()=>BundlePrice());
+                                  },
+                                  child: Container(padding: EdgeInsets.all(20),
+                                    height: 173,
+                                    width: 173,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color.fromARGB(240, 72, 72, 72),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: 15,),
+                                        Image.asset('assets/images/Crown.png'),
+                                        SizedBox(height: 50,),
+                                        Text("Membership              >",
+                                        style: TextStyle(
+                                          fontSize: 11,
+                                          fontWeight: FontWeight.w700,
+                                          color: ColorsConfig.primaryColor
+                                        ),)
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 GestureDetector(
@@ -342,30 +349,35 @@ class AccountPage extends StatelessWidget {
                             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 SizedBox(height: 7,),
-                                Container(padding: EdgeInsets.all(20),
-                                  height: 173,
-                                  width: 173,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Color.fromARGB(240, 72, 72, 72),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(height: 15,),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 50,
-                                        child: Image.asset('assets/images/helpdesk.png')),
-                                      SizedBox(height: 50,),
-                                      Text("Help                           >",
-                                      style: TextStyle(
-                                        fontSize: 11,
-                                        fontWeight: FontWeight.w700,
-                                        color: ColorsConfig.primaryColor
-                                      ),)
-                                    ],
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.to(()=>HelpandSuport());
+                                  },
+                                  child: Container(padding: EdgeInsets.all(20),
+                                    height: 173,
+                                    width: 173,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color.fromARGB(240, 72, 72, 72),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: 15,),
+                                        SizedBox(
+                                          height: 50,
+                                          width: 50,
+                                          child: Image.asset('assets/images/helpdesk.png')),
+                                        SizedBox(height: 50,),
+                                        Text("Help                           >",
+                                        style: TextStyle(
+                                          fontSize: 11,
+                                          fontWeight: FontWeight.w700,
+                                          color: ColorsConfig.primaryColor
+                                        ),)
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 GestureDetector(

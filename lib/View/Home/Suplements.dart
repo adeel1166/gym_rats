@@ -7,6 +7,7 @@ import 'package:gym_rats/View/Exercises/GridDemo.dart';
 import 'package:gym_rats/View/Home/HomePage.dart';
 import 'package:gym_rats/View/Home/Personel_Traine.dart';
 import 'package:gym_rats/View/Home/account_page.dart';
+import 'package:gym_rats/View/Home/helpandsuport.dart';
 import 'package:gym_rats/View/Meals/screens_nutrition/home.dart';
 
 class Suplements extends StatelessWidget {
@@ -131,7 +132,7 @@ class Suplements extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      
+                      Get.to(HelpandSuport());
                     },
                     child: Container(
                       padding: EdgeInsets.only(left: 20,right: 20,bottom: 10),
@@ -185,7 +186,7 @@ class Suplements extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      
+                      Get.to(HelpandSuport());
                     },
                     child: Container(
                       padding: EdgeInsets.only(left: 20,right: 20,bottom: 10),
