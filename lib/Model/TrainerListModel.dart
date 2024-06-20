@@ -11,11 +11,13 @@ class Trainer {
   final String message;
   final String imagePath;
   final bool isActive;
+  final String whatsappLink;
 
   Trainer({
     required this.name,
     required this.message,
     required this.imagePath,
     required this.isActive,
+    required this.whatsappLink,
   });
 }

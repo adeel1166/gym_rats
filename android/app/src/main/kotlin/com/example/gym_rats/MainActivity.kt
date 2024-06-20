@@ -14,7 +14,8 @@ class MainActivity : FlutterActivity() {
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler { call, result ->
             when (call.method) {
                 "openWhatsApp" -> {
-                    openWhatsApp()
+                    val link = call.argument<String>("link")
+                    openWhatsApp(link)
                     result.success(null)
                 }
                 "openGmail" -> {
@@ -26,9 +27,9 @@ class MainActivity : FlutterActivity() {
         }
     }
 
-    private fun openWhatsApp() {
+    private fun openWhatsApp(link: String?) {
         val intent = Intent(Intent.ACTION_VIEW)
-        intent.data = Uri.parse("https://wa.link/0mi95a")
+        intent.data = Uri.parse(link)
         startActivity(intent)
     }
 
